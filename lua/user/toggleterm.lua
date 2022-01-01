@@ -68,3 +68,9 @@ local python3 = Terminal:new({ cmd = "python3", hidden = true })
 function _PYTHON_TOGGLE()
 	python3:toggle()
 end
+
+local ipython3 = Terminal:new({ cmd = "ipython3", hidden = true })
+
+function _IPYTHON_TOGGLE()
+	ipython3:toggle()
+end
