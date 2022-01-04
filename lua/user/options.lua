@@ -16,7 +16,7 @@ local options = {
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
-  -- termguicolors = true,                    -- set term gui colors (most terminals support this)
+  termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 100,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
@@ -31,7 +31,7 @@ local options = {
   signcolumn = "auto",                     -- only show the sign column when need to
   textwidth = 79,                          -- set a text limit column
   wrap = false,                            -- display lines as one long line
-  scrolloff = 8,                           -- minimal number of screen lines to keep above and below 
+  scrolloff = 8,                           -- minimal number of screen lines to keep above and below
   sidescrolloff = 8,                       -- minimal number of screen lines to keep left and right
 }
 
