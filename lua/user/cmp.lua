@@ -127,9 +127,19 @@ cmp.setup {
     native_menu = false,
   },
 }
+
 -- cmdline
 cmp.setup.cmdline(":", {
     sources = {
       { name = "cmdline" },
     },
+})
+
+-- lsp_document_symbols
+cmp.setup.cmdline('/', {
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp_document_symbol' }
+    }, {
+      { name = 'buffer' }
+    })
 })
