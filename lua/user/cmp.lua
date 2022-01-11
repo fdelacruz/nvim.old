@@ -127,3 +127,9 @@ cmp.setup {
     native_menu = false,
   },
 }
+-- cmdline
+cmp.setup.cmdline(":", {
+    sources = {
+      { name = "cmdline" },
+    },
+})
