@@ -21,8 +21,38 @@ lsp_installer.on_server_ready(function(server)
 	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	 end
 
-	-- This setup() function is exactly the same as lspconfig's setup function.
-	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-	server:setup(opts)
+   if server.name == "rust_analyzer" then
+    local rustopts = {
+            tools = {
+                autoSetHints = false,
+                hover_with_actions = true,
+                inlay_hints = {
+                    show_parameter_hints = true,
+                    parameter_hints_prefix = "",
+                    other_hints_prefix = "",
+                },
+            },
+            server = vim.tbl_deep_extend("force", server:get_default_options(), opts, {
+                settings = {
+                    ["rust-analyzer"] = {
+                        completion = {
+                            postfix = {
+                                enable = false
+                            }
+                        },
+                        checkOnSave = {
+                            command = "clippy"
+                        },
+                    }
+                }
+            }),
+        }
+      require("rust-tools").setup(rustopts)
+      server:attach_buffers()
+  else
+    -- This setup() function is exactly the same as lspconfig's setup function.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+	  server:setup(opts)
+  end
 end)
 
