@@ -15,7 +15,7 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
---   פּ ﯟ   some other good icons
+--   פּ ﯟ   蘒練  some other good icons
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -101,27 +101,37 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
+        -- nvim_lsp = "[LSP]",
+        -- luasnip = "[Snippet]",
+        -- buffer = "[Buffer]",
+        -- path = "[Path]",
+        -- emoji = "[Emoji]",
+        nvim_lsp = "",
+        nvim_lua = "",
+        luasnip = "",
+        buffer = "",
+        path = "",
+        emoji = "",
       })[entry.source.name]
       return vim_item
     end,
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = "nvim_lua"},
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    { name = "emoji" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
+  -- documentation = {
+  --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  -- },
+  documentation = false,
   experimental = {
     ghost_text = false,
     native_menu = false,
