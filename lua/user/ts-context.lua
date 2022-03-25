@@ -8,9 +8,9 @@ require'treesitter-context'.setup{
         -- By setting the 'default' entry below, you can control which nodes you want to
         -- appear in the context window.
         default = {
-            'class',
-            'function',
-            'method',
+            -- 'class',
+            -- 'function',
+            -- 'method',
             -- 'for', -- These won't appear in the context
             -- 'while',
             -- 'if',
