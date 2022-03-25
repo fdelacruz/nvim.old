@@ -97,6 +97,7 @@ M.on_attach = function(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
@@ -104,21 +105,25 @@ if not status_ok then
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-Function M.enable_format_on_save()
+local notify_status_ok, notify = pcall(require, "notify")
+if not notify_status_ok then
+  return
+end
+
+function M.enable_format_on_save()
   vim.cmd [[
     augroup format_on_save
       autocmd! 
       autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
     augroup end
   ]]
-  print "Enabled format on save"
+  notify "Enabled format on save"
 end
 
 function M.disable_format_on_save()
   M.remove_augroup "format_on_save"
-  print "Disabled format on save"
+  notify "Disabled format on save"
 end
 
 function M.toggle_format_on_save()
