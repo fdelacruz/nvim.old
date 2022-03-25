@@ -28,7 +28,7 @@ M.setup = function()
     underline = true,
     severity_sort = true,
     float = {
-      focusable = false,
+      focusable = true,
       style = "minimal",
       border = "rounded",
       source = "always",
@@ -104,6 +104,7 @@ if not status_ok then
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 Function M.enable_format_on_save()
   vim.cmd [[
