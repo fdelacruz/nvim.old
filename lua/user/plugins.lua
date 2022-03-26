@@ -77,7 +77,7 @@ return packer.startup(function(use)
   use "tversteeg/registers.nvim"
 
   -- Colorschemes
-  use "shaunsingh/solarized.nvim"
+  use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
