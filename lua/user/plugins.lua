@@ -123,6 +123,8 @@ return packer.startup(function(use)
     cmd = "TroubleToggle",
   }
 
+  use "github/copilot"
+
   -- Rust
   -- use "simrat39/rust-tools.nvim"
   use { "matze/rust-tools.nvim", branch = "fix-upstreamed-inlayhints" }
