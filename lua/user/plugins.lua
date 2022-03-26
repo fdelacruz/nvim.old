@@ -76,6 +76,7 @@ return packer.startup(function(use)
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
   use "metakirby5/codi.vim"
+  use "nyngwang/NeoZoom.lua"
 
   -- Colorschemes
   use "rebelot/kanagawa.nvim"
