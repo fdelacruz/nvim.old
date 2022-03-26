@@ -41,7 +41,7 @@ if has('conceal') && get(g:, 'vim_markdown_conceal', 1)
   let s:conceal = ' conceal'
   let s:concealends = ' concealends'
 endif
-if has('conceal') && get(g:, 'vim_markdown_conceal_code_blocks', 1)
+if has('conceal') && get(g:, 'vim_markdown_conceal_code_blocks', 0)
   let s:concealcode = ' concealends'
 endif
 
@@ -51,16 +51,6 @@ if get(g:, 'vim_markdown_emphasis_multiline', 1)
 else
     let s:oneline = ' oneline'
 endif
-" syn region mkdItalic matchgroup=mkdItalic start="\%(\*\|_\)"    end="\%(\*\|_\)"
-" syn region mkdBold matchgroup=mkdBold start="\%(\*\*\|__\)"    end="\%(\*\*\|__\)"
-" syn region mkdBoldItalic matchgroup=mkdBoldItalic start="\%(\*\*\*\|___\)"    end="\%(\*\*\*\|___\)"
-" execute 'syn region htmlItalic matchgroup=mkdItalic start="\%(^\|\s\)\zs\*\ze[^\\\*\t ]\%(\%([^*]\|\\\*\|\n\)*[^\\\*\t ]\)\?\*\_W" end="[^\\\*\t ]\zs\*\ze\_W" keepend contains=@Spell' . s:oneline . s:concealends
-" execute 'syn region htmlItalic matchgroup=mkdItalic start="\%(^\|\s\)\zs_\ze[^\\_\t ]" end="[^\\_\t ]\zs_\ze\_W" keepend contains=@Spell' . s:oneline . s:concealends
-" execute 'syn region htmlBold matchgroup=mkdBold start="\%(^\|\s\)\zs\*\*\ze\S" end="\S\zs\*\*" keepend contains=@Spell' . s:oneline . s:concealends
-" execute 'syn region htmlBold matchgroup=mkdBold start="\%(^\|\s\)\zs__\ze\S" end="\S\zs__" keepend contains=@Spell' . s:oneline . s:concealends
-" execute 'syn region htmlBoldItalic matchgroup=mkdBoldItalic start="\%(^\|\s\)\zs\*\*\*\ze\S" end="\S\zs\*\*\*" keepend contains=@Spell' . s:oneline . s:concealends
-" execute 'syn region htmlBoldItalic matchgroup=mkdBoldItalic start="\%(^\|\s\)\zs\*\*\*\ze\S" end="\S\zs\*\*\*" keepend contains=@Spell' . s:oneline . s:concealends
-" execute 'syn region htmlBoldItalic matchgroup=mkdBoldItalic start="\%(^\|\s\)\zs___\ze\S" end="\S\zs___" keepend contains=@Spell' . s:oneline . s:concealends
 
 " [link](URL) | [link][id] | [link][] | ![image](URL)
 syn region mkdFootnotes matchgroup=mkdDelimiter start="\[^"    end="\]"
@@ -85,16 +75,6 @@ syn region mkdLinkDefTarget start="<\?\zs\S" excludenl end="\ze[>[:space:]\n]"  
 syn region mkdLinkTitle matchgroup=mkdDelimiter start=+"+     end=+"+  contained
 syn region mkdLinkTitle matchgroup=mkdDelimiter start=+'+     end=+'+  contained
 syn region mkdLinkTitle matchgroup=mkdDelimiter start=+(+     end=+)+  contained
-
-"HTML headings
-" syn region htmlH1       matchgroup=mkdHeading     start="^\s*#"                   end="$" contains=mkdLink,mkdInlineURL,@Spell
-" syn region htmlH2       matchgroup=mkdHeading     start="^\s*##"                  end="$" contains=mkdLink,mkdInlineURL,@Spell
-" syn region htmlH3       matchgroup=mkdHeading     start="^\s*###"                 end="$" contains=mkdLink,mkdInlineURL,@Spell
-" syn region htmlH4       matchgroup=mkdHeading     start="^\s*####"                end="$" contains=mkdLink,mkdInlineURL,@Spell
-" syn region htmlH5       matchgroup=mkdHeading     start="^\s*#####"               end="$" contains=mkdLink,mkdInlineURL,@Spell
-" syn region htmlH6       matchgroup=mkdHeading     start="^\s*######"              end="$" contains=mkdLink,mkdInlineURL,@Spell
-" syn match  htmlH1       /^.\+\n=\+$/ contains=mkdLink,mkdInlineURL,@Spell
-" syn match  htmlH2       /^.\+\n-\+$/ contains=mkdLink,mkdInlineURL,@Spell
 
 "define Markdown groups
 syn match  mkdLineBreak    /  \+$/
@@ -134,7 +114,7 @@ if get(g:, 'vim_markdown_toml_frontmatter', 0)
   endtry
 endif
 
-if get(g:, 'vim_markdown_json_frontmatter', 0)
+if get(g:, 'vim_markdown_json_frontmatter', 1)
   try
     syn include @jsonTop syntax/json.vim
     syn region Comment matchgroup=mkdDelimiter start="\%^{$" end="^}$" contains=@jsonTop keepend
@@ -144,18 +124,14 @@ if get(g:, 'vim_markdown_json_frontmatter', 0)
   endtry
 endif
 
-if get(g:, 'vim_markdown_math', 0)
+if get(g:, 'vim_markdown_math', 1)
   syn include @tex syntax/tex.vim
   syn region mkdMath start="\\\@<!\$" end="\$" skip="\\\$" contains=@tex keepend
   syn region mkdMath start="\\\@<!\$\$" end="\$\$" skip="\\\$" contains=@tex keepend
 endif
 
-" Strike through
-if get(g:, 'vim_markdown_strikethrough', 0)
-    execute 'syn region mkdStrike matchgroup=htmlStrike start="\%(\~\~\)" end="\%(\~\~\)"' . s:concealends
-    HtmlHiLink mkdStrike        htmlStrike
-endif
-
+execute 'syn region mkdStrike matchgroup=CmpItemAbbrDeprecated start="\%(\~\~\)" end="\%(\~\~\)"' . s:concealends
+execute 'syn region mkdBoldItalic matchgroup=markdownBoldItalic start="\%(\*\*_\)" end="\%(_\*\*\)"' . s:concealends
 syn cluster mkdNonListItem contains=@htmlTop,htmlItalic,htmlBold,htmlBoldItalic,mkdFootnotes,mkdInlineURL,mkdLink,mkdLinkDef,mkdLineBreak,mkdBlockquote,mkdCode,mkdRule,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,mkdMath,mkdStrike
 
 "highlighting for Markdown groups
@@ -178,7 +154,8 @@ HtmlHiLink mkdLinkDef       mkdID
 HtmlHiLink mkdLinkDefTarget mkdURL
 HtmlHiLink mkdLinkTitle     htmlString
 HtmlHiLink mkdDelimiter     Delimiter
-" HtmlHiLink mkdBoldItalic    markdownBoldItalic
+HtmlHiLink mkdStrike        CmpItemAbbrDeprecated 
+HtmlHiLink mkdBoldItalic    markdownBoldItalic 
 
 let b:current_syntax = "mkd"
 
