@@ -102,6 +102,7 @@ return packer.startup(function(use)
   use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
+  use "b0o/SchemaStore.nvim"
   use {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
