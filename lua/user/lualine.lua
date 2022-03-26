@@ -22,7 +22,7 @@ local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
-	symbols = { error = " ", warn = " " },
+	-- symbols = { error = " ", warn = " " },
 	colored = false,
 	update_in_insert = false,
 	always_visible = true,
