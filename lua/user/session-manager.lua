@@ -19,4 +19,7 @@ if not tele_status_ok then
 	return
 end
 
-telescope.load_extension('sessions')
+local tele_session_status_ok, telescope = pcall(telescope.load_extension, "sessions")
+if not tele_session_status_ok then
+	return
+end
