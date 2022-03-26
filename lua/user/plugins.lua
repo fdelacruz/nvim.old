@@ -74,6 +74,7 @@ return packer.startup(function(use)
   -- use "blackCauldron7/surround.nvim"
   use "Shatur/neovim-session-manager"
   use "rcarriga/nvim-notify"
+  use "tversteeg/registers.nvim"
 
   -- Colorschemes
   use "shaunsingh/solarized.nvim"
