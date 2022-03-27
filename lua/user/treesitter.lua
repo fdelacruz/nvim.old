@@ -26,7 +26,7 @@ configs.setup({
       disable = { "xml" },
     },
     rainbow = {
-      enable = false,
+      enable = true,
       colors = {
         "Gold",
         "Orchid",
