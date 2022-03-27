@@ -72,6 +72,7 @@ return packer.startup(function(use)
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
   -- use "blackCauldron7/surround.nvim"
+  use "tpope/vim-repeat"
   use "Shatur/neovim-session-manager"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
