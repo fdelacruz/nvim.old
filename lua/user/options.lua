@@ -4,6 +4,7 @@ local options = {
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
+  colorcolumn = "80",
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
@@ -42,7 +43,6 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd [[ set colorcolumn=+1 ]]   -- TODO: this doesn't seem to work
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
