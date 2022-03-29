@@ -114,11 +114,11 @@ local mappings = {
   ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Find files",
-  },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  -- ["f"] = {
+  --   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+  --   "Find files",
+  -- },
+  -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
@@ -138,6 +138,25 @@ local mappings = {
     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+  },
+
+  f = {
+    name = "Fin",
+    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    f = {
+      "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "Find files",
+    },
+    t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    h = { "<cmd>Telescope help_tags<cr>", "Help" },
+    i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
+    l = { "<cmd>Telescope resume<cr>", "Last Search" },
+    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    R = { "<cmd>Telescope registers<cr>", "Registers" },
+    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
   g = {
@@ -161,6 +180,7 @@ local mappings = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
     },
+
     G = {
       name = "Gist",
       a = { "<cmd>Gist -b -a<cr>", "Create Anon" },
@@ -205,18 +225,13 @@ local mappings = {
   },
 
   s = {
-    name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    -- f = { "<cmd>Telescope find_files<cr>", "Find File" },
-    h = { "<cmd>Telescope help_tags<cr>", "Help" },
-    i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media"},
-    l = { "<cmd>Telescope resume<cr>", "Last Search" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    name = "Surround",
+    ["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },
+    a = { "<cmd>lua require('surround').surround_add(true)<cr>", "Add" },
+    d = { "<cmd>lua require('surround').surround_delete()<cr>", "Delete" },
+    r = { "<cmd>lua require('surround').surround_replace()<cr>", "Replace" },
+    q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
+    b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
   },
 
   S = {
@@ -225,13 +240,14 @@ local mappings = {
     -- l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
     -- d = { "<cmd>LoadCurrentDirSession!<cr>", "Load Last Dir" },
     -- f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
-    name = "Surround",
-    ["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },
-    a = { "<cmd>lua require('surround').surround_add(true)<cr>", "Add" },
-    d = { "<cmd>lua require('surround').surround_delete()<cr>", "Delete" },
-    r = { "<cmd>lua require('surround').surround_replace()<cr>", "Replace" },
-    q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
-    b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
+    name = "SnipRun",
+    c = { "<cmd>SnipClose<cr>", "Close" },
+    f = { "<cmd>%SnipRun<cr>", "Run File" },
+    i = { "<cmd>SnipInfo<cr>", "Info" },
+    m = { "<cmd>SnipReplMemoryClean<cr>", "Mem Clean" },
+    r = { "<cmd>SnipReset<cr>", "Reset" },
+    t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
+    x = { "<cmd>SnipTerminate<cr>", "Terminate" },
   },
 
   t = {
