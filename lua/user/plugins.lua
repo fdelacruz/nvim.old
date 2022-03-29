@@ -126,7 +126,7 @@ return packer.startup(function(use)
     cmd = "TroubleToggle",
   }
 
-  use "github/copilot"
+  use "github/copilot.vim"
 
   -- Rust
   -- use "simrat39/rust-tools.nvim"
