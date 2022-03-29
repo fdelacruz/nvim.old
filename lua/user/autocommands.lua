@@ -38,6 +38,9 @@ vim.cmd [[
   autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]
 
+-- autocmd BufLeave * if (!exists('b:caret')) | let b:caret = winsaveview() | endif
+-- autocmd BufEnter * if (exists('b:caret')) | call winrestview(b:caret) | endif
+
 -- Autoformat
 -- augroup _lsp
 --   autocmd!
