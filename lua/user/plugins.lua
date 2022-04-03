@@ -131,6 +131,7 @@ return packer.startup(function(use)
   }
 
   use "github/copilot.vim"
+  use "RRethy/vim-illuminate"
 
   -- Rust
   -- use "simrat39/rust-tools.nvim"
