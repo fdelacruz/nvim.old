@@ -36,6 +36,11 @@ vim.cmd [[
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
 
+  augroup illuminate_augroup
+    autocmd!
+    autocmd VimEnter * hi link illuminatedWord LspReferenceText
+  augroup end
+
   autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]
 
