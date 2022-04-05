@@ -41,6 +41,12 @@ vim.cmd [[
     autocmd VimEnter * hi link illuminatedWord LspReferenceText
   augroup end
 
+  " let ftToEnable = ["rust"]
+  augroup codelens
+    autocmd!
+    autocmd BufWritePost *.rs lua vim.lsp.codelens.refresh() 
+  augroup end
+
   autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]
 
