@@ -37,6 +37,8 @@ local options = {
   sidescrolloff = 8,                       -- minimal number of screen lines to keep left and right
 }
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.opt.shortmess:append "c"
 
