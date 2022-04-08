@@ -1,7 +1,7 @@
 # Neovim from scratch
 
 **IMPORTANT** Requires [Neovim v0.6.0](https://github.com/neovim/neovim/releases/tag/v0.6.0) or [Nightly](https://github.com/neovim/neovim/releases/tag/nightly). 
-## Install Neovim (using Homebrew)
+## Install Neovim (Homebrew)
 ```
 brew install neovim
 ```
@@ -9,6 +9,16 @@ Or install the development version
 ```
 brew install --HEAD luajit
 brew install --HEAD neovim
+```
+**NOTE** In case neovim install fails
+```
+brew uninstall neovim
+brew uninstall --force libvterm (or brew unlink libvterm)
+brew install --HEAD neovim 
+```
+In order to upgrade neovim
+```
+brew upgrade --fetch-HEAD neovim
 ```
 ## Try out this config
 
