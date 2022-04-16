@@ -47,6 +47,5 @@ require("user.gps")
 require("user.illuminate")
 require("user.lir")
 require("user.jabs")
-require("user.easyclip")
 
 vim.opt.laststatus = 3

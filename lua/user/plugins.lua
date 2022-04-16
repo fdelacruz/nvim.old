@@ -137,7 +137,6 @@ return packer.startup(function(use)
 
   use "github/copilot.vim"
   use "RRethy/vim-illuminate"
-  use "svermeulen/vim-easyclip"
 
   -- Rust
   -- use "simrat39/rust-tools.nvim"
