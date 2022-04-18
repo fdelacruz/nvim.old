@@ -48,4 +48,6 @@ require("user.illuminate")
 require("user.lir")
 require("user.jabs")
 require("user.dap")
+require("user.rust")
+
 vim.opt.laststatus = 3
