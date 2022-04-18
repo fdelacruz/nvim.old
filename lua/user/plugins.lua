@@ -139,8 +139,7 @@ return packer.startup(function(use)
   use "RRethy/vim-illuminate"
 
   -- Rust
-  -- use "simrat39/rust-tools.nvim"
-  use { "matze/rust-tools.nvim", branch = "fix-upstreamed-inlayhints" }
+  use "simrat39/rust-tools.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
