@@ -242,14 +242,6 @@ local mappings = {
     -- l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
     -- d = { "<cmd>LoadCurrentDirSession!<cr>", "Load Last Dir" },
     -- f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
-    name = "SnipRun",
-    c = { "<cmd>SnipClose<cr>", "Close" },
-    f = { "<cmd>%SnipRun<cr>", "Run File" },
-    i = { "<cmd>SnipInfo<cr>", "Info" },
-    m = { "<cmd>SnipReplMemoryClean<cr>", "Mem Clean" },
-    r = { "<cmd>SnipReset<cr>", "Reset" },
-    t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
-    x = { "<cmd>SnipTerminate<cr>", "Terminate" },
   },
 
   t = {
