@@ -64,7 +64,6 @@ return packer.startup(function(use)
   use "phaazon/hop.nvim"
   use "andymass/vim-matchup"
   use "nacro90/numb.nvim"
-  use "monaqa/dial.nvim"
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
   use "folke/zen-mode.nvim"
