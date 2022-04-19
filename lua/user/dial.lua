@@ -9,6 +9,7 @@ dial_config.augends:register_group {
     augend.integer.alias.decimal,
     augend.integer.alias.hex,
     augend.date.alias["%Y/%m/%d"],
+    augend.semver.alias.semver,
   },
   typescript = {
     augend.integer.alias.decimal,
@@ -47,6 +48,7 @@ dial_config.augends:register_group {
     augend.constant.alias.bool, -- boolean value (true <-> false)
     augend.integer.alias.decimal,
     augend.integer.alias.hex,
+    augend.semver.alias.semver,
   },
 }
 
