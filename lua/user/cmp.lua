@@ -126,11 +126,11 @@ cmp.setup {
 }
 
 -- cmdline
-cmp.setup.cmdline(":", {
-    sources = {
-      { name = "cmdline" },
-    },
-})
+-- cmp.setup.cmdline(":", {
+--     sources = {
+--       { name = "cmdline" },
+--     },
+-- })
 
 -- lsp_document_symbols
 cmp.setup.cmdline('/', {
