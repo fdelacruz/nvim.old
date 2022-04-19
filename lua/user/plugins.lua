@@ -81,7 +81,6 @@ return packer.startup(function(use)
   use "metakirby5/codi.vim"
   use "nyngwang/NeoZoom.lua"
   use "SmiteshP/nvim-gps"
-  use { "michaelb/sniprun", run = "bash ./install.sh"}
   use "matbme/JABS.nvim"
 
   -- Colorschemes
