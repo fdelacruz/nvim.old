@@ -134,8 +134,6 @@ return packer.startup(function(use)
 
   use "github/copilot.vim"
   use "RRethy/vim-illuminate"
-  use { "mg979/vim-visual-multi", branch = "master" }
-
 
   -- Rust
   use "simrat39/rust-tools.nvim"
