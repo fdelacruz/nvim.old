@@ -21,10 +21,6 @@ configs.setup({
       enable = true,
       enable_autocmd = false,
     },
-    autotag = {
-      enable = true,
-      disable = { "xml" },
-    },
     rainbow = {
       enable = true,
       colors = {

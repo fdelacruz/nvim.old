@@ -152,7 +152,6 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "p00f/nvim-ts-rainbow"
-  use "windwp/nvim-ts-autotag"
   use "romgrk/nvim-treesitter-context"
 
   -- Git
