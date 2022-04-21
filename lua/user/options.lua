@@ -51,3 +51,13 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 vim.cmd [[set cpoptions+=$]] -- show dollar sign at end of text to be changed
+vim.cmd [[ 
+  nnoremap <up>     <nop>
+  nnoremap <down>   <nop>
+  nnoremap <left>   <nop>
+  nnoremap <right>  <nop>
+  inoremap <up>     <nop>
+  inoremap <down>   <nop>
+  inoremap <left>   <nop>
+  inoremap <right>  <nop>
+]] -- Arrow keys are unacceptable
