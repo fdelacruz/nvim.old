@@ -22,7 +22,6 @@ dashboard.section.buttons.val = {
 		icons.git.Repo .. " Find project",
 		":lua require('telescope').extensions.projects.projects()<CR>"
 	),
-	dashboard.button("r", icons.documents.Folder .. " Browser", ":Telescope file_browser <CR>"),
   dashboard.button("o", icons.ui.History .. " Recent files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", icons.ui.List .. " Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("s", icons.ui.SignIn .. " Find Session", ":Telescope sessions save_current=false <CR>"),
