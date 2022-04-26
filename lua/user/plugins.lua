@@ -36,7 +36,7 @@ packer.init {
       return require("packer.util").float { border = "rounded" }
     end,
   },
-  max_jobs = 50
+  max_jobs = 50,
 }
 
 -- Install your plugins here
@@ -197,10 +197,21 @@ return packer.startup(function(use)
   use "rhysd/conflict-marker.vim"
 
   -- DAP
-  use "mfussenegger/nvim-dap"
-  use "theHamsta/nvim-dap-virtual-text"
-  use "rcarriga/nvim-dap-ui"
-  use "Pocco81/DAPInstall.nvim"
+  use {
+    "mfussenegger/nvim-dap",
+    opt = true,
+    event = "BufReadPre",
+    module = { "dap" },
+    wants = { "nvim-dap-virtual-text", "nvim-dap-ui", "which-key.nvim" },
+    requires = {
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+      "nvim-telescope/telescope-dap.nvim",
+    },
+    config = function()
+      require("user.dap").setup()
+    end,
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
