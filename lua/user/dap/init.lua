@@ -1,22 +1,16 @@
 local M = {}
 
 local function configure()
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignHint", linehl = "", numhl = "" })
-		vim.fn.sign_define(
-			"DapBreakpointCondition",
-			{ text = "", texthl = "DiagnosticSignHint", linehl = "", numhl = "" }
-		)
-		vim.fn.sign_define("DapLogPoint", { text = "ﱴ", texthl = "DiagnosticSignHint", linehl = "", numhl = "" })
-		vim.fn.sign_define("DapStopped", {
-			text = "",
-			texthl = "DiagnosticSignInfo",
-			linehl = "QuickFixLine",
-			numhl = "CursorLineNr",
-		})
-		vim.fn.sign_define(
-			"DapBreakpointRejected",
-			{ text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" }
-		)
+  vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignHint", linehl = "", numhl = "" })
+  vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DiagnosticSignHint", linehl = "", numhl = "" })
+  vim.fn.sign_define("DapLogPoint", { text = "ﱴ", texthl = "DiagnosticSignHint", linehl = "", numhl = "" })
+  vim.fn.sign_define("DapStopped", {
+    text = "",
+    texthl = "DiagnosticSignInfo",
+    linehl = "QuickFixLine",
+    numhl = "CursorLineNr",
+  })
+  vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 end
 
 local function configure_exts()
