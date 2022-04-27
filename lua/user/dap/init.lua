@@ -81,6 +81,7 @@ end
 
 local function configure_debuggers()
   require("user.dap.rust").setup()
+  require("user.dap.python").setup()
 end
 
 function M.setup()
