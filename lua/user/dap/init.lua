@@ -1,30 +1,22 @@
 local M = {}
 
 local function configure()
-  local dap_breakpoint = {
-    error = {
-      text = "🟥",
-      texthl = "LspDiagnosticsSignError",
-      linehl = "",
-      numhl = "",
-    },
-    rejected = {
-      text = "",
-      texthl = "LspDiagnosticsSignHint",
-      linehl = "",
-      numhl = "",
-    },
-    stopped = {
-      text = "⭐️",
-      texthl = "LspDiagnosticsSignInformation",
-      linehl = "DiagnosticUnderlineInfo",
-      numhl = "LspDiagnosticsSignInformation",
-    },
-  }
-
-  vim.fn.sign_define("DapBreakpoint", dap_breakpoint.error)
-  vim.fn.sign_define("DapStopped", dap_breakpoint.stopped)
-  vim.fn.sign_define("DapBreakpointRejected", dap_breakpoint.rejected)
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignHint", linehl = "", numhl = "" })
+		vim.fn.sign_define(
+			"DapBreakpointCondition",
+			{ text = "", texthl = "DiagnosticSignHint", linehl = "", numhl = "" }
+		)
+		vim.fn.sign_define("DapLogPoint", { text = "ﱴ", texthl = "DiagnosticSignHint", linehl = "", numhl = "" })
+		vim.fn.sign_define("DapStopped", {
+			text = "",
+			texthl = "DiagnosticSignInfo",
+			linehl = "QuickFixLine",
+			numhl = "CursorLineNr",
+		})
+		vim.fn.sign_define(
+			"DapBreakpointRejected",
+			{ text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" }
+		)
 end
 
 local function configure_exts()
@@ -75,10 +67,6 @@ local function configure_exts()
     },
     windows = { indent = 1 },
   }
-
-  local icons = require "user.icons"
-
-  vim.fn.sign_define("DapBreakpoint", { text = icons.ui.Bug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
   dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
