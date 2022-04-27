@@ -38,7 +38,7 @@ nvim_tree.setup {
     enable = false,
   },
   -- disable_netrw = true,
-  -- hijack_netrw = true,
+  hijack_netrw = false,
   -- open_on_setup = false,
   ignore_ft_on_setup = {
     "startify",
