@@ -132,7 +132,6 @@ return packer.startup(function(use)
     cmd = "TroubleToggle",
   }
 
-  use "github/copilot.vim"
   use "RRethy/vim-illuminate"
 
   -- Rust
