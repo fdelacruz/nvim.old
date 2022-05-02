@@ -78,7 +78,7 @@ return packer.startup(function(use)
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
   use "metakirby5/codi.vim"
-  use "nyngwang/NeoZoom.lua"
+  use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
   use "SmiteshP/nvim-gps"
   use "matbme/JABS.nvim"
 
