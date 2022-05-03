@@ -2,7 +2,6 @@ vim.cmd [[
   augroup _general_settings
     autocmd!
     autocmd FileType qf,help,man,lspinfo, nnoremap <silent> <buffer> q :close<CR> 
-    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
     autocmd CmdWinEnter * quit
@@ -12,12 +11,6 @@ vim.cmd [[
           \   exe "normal g`\"" |
           \ endif
 
-  augroup end
-
-  augroup qs_colors
-    autocmd!
-    autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
-    autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
   augroup end
 
   augroup _git
@@ -47,21 +40,28 @@ vim.cmd [[
     autocmd VimEnter * hi link illuminatedWord LspReferenceText
   augroup end
 
-  " let ftToEnable = ["rust"]
-  augroup codelens
-    autocmd!
-    autocmd BufWritePost *.rs lua vim.lsp.codelens.refresh() 
-  augroup end
-
   autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 
 ]]
 
--- autocmd BufLeave * if (!exists('b:caret')) | let b:caret = winsaveview() | endif
--- autocmd BufEnter * if (exists('b:caret')) | call winrestview(b:caret) | endif
+vim.api.nvim_create_autocmd({ "Colorscheme" }, {
+  callback = function()
+    vim.cmd [[
+      highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+      highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+    ]]
+  end,
+})
 
--- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  pattern = { "*.rs" },
+  callback = function ()
+    vim.lsp.codelens.refresh()
+  end
+})
+
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+  callback = function ()
+    vim.highlight.on_yank({ higroup = 'Visual', timeout = 200 })
+  end
+})
