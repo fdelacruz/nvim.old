@@ -38,8 +38,7 @@ lsp_installer.on_server_ready(function(server)
                 hover_with_actions = true,
                 inlay_hints = {
                     show_parameter_hints = true,
-                    parameter_hints_prefix = "",
-                    other_hints_prefix = "",
+                    show_variable_name = true,
                 },
             },
             server = vim.tbl_deep_extend("force", server:get_default_options(), opts, {
