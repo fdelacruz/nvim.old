@@ -135,7 +135,11 @@ return packer.startup(function(use)
   use "RRethy/vim-illuminate"
 
   -- Rust
-  use "simrat39/rust-tools.nvim"
+  -- use "simrat39/rust-tools.nvim"
+  use {
+    "simrat39/rust-tools.nvim",
+    branch = "modularize_and_inlay_rewrite"
+  }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
