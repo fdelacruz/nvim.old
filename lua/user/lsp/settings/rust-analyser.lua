@@ -7,16 +7,16 @@ return {
   --     show_variable_name = true,
   --   },
   -- },
-  settings = {
-    ["rust-analyzer"] = {
-      completion = {
-        postfix = {
-          enable = false,
-        },
-      },
-      checkOnSave = {
-        command = "clippy",
-      },
-    },
-  },
+  -- settings = {
+  --   ["rust-analyzer"] = {
+  --     completion = {
+  --       postfix = {
+  --         enable = false,
+  --       },
+  --     },
+  --     checkOnSave = {
+  --       command = "clippy",
+  --     },
+  --   },
+  -- },
 }
