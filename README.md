@@ -25,7 +25,7 @@ brew upgrade --fetch-HEAD neovim
 Make sure to remove or move your current `nvim` directory
 
 ```
-git clone https://github.com/LunarVim/Neovim-from-scratch.git ~/.config/nvim
+git clone https://github.com/fdelacruz/Neovim-from-scratch.git ~/.config/nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed 
