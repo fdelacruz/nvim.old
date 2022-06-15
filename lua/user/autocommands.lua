@@ -49,10 +49,7 @@ vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
 vim.api.nvim_create_autocmd({ "CursorMoved" }, {
   callback = function()
     local gps = require("user.winbar").gps()
-    -- print(gps)
-    vim.opt.winbar = gps
-
-    -- vim.opt.winbar = "%{%v:lua.require'user.winbar'.gps()%}"
+    vim.opt_local.winbar = gps
   end,
 })
 
