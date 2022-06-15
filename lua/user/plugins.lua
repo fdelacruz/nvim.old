@@ -80,7 +80,7 @@ return packer.startup(function(use)
   use "metakirby5/codi.vim"
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
   use "SmiteshP/nvim-gps"
-  use "matbme/JABS.nvim"
+  use "ChristianChiarulli/JABS.nvim"
 
   -- tmux
   use { "aserowy/tmux.nvim",
