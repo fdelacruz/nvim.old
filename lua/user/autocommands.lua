@@ -46,6 +46,14 @@ vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
   end,
 })
 
+-- vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+--   callback = function()
+--     local gps = require("user.winbar").gps()
+--     -- print(gps)
+--     vim.opt.winbar = gps
+--   end,
+-- })
+
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
     vim.cmd "set formatoptions-=cro"
