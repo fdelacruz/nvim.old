@@ -118,9 +118,9 @@ local mappings = {
   o = {
     name = "Options",
     w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
-    r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative Number" },
-    l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Relative Cursorline" },
-    s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spelling" },
+    r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
+    l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
+    s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
   },
 
   p = {
