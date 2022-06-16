@@ -92,9 +92,9 @@ lualine.setup({
 	sections = {
 		lualine_a = { mode },
 		lualine_b = { branch, diagnostics },
-		lualine_c = {
-      { nvim_gps, cond = hide_in_width },
-		},
+		-- lualine_c = {
+  --     { nvim_gps, cond = hide_in_width },
+		-- },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
 		lualine_z = { progress }
