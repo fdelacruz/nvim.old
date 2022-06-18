@@ -89,6 +89,7 @@ if vim.fn.has "mac" == 1 then
       ChevronRight = ">",
       Table = "",
       Calendar = "",
+      Plus = ""
     },
     diagnostics = {
       Error = "",
@@ -185,6 +186,7 @@ else
       ChevronRight = "",
       Table = " ",
       Calendar = " ",
+      Plus = ""
     },
     diagnostics = {
       Error = " ",
