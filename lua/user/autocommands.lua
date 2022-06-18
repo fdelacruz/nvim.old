@@ -7,6 +7,12 @@
 --   end,
 -- })
 
+vim.cmd [[ autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+]]
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
   callback = function()
