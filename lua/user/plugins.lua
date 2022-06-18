@@ -80,7 +80,10 @@ return packer.startup(function(use)
   use "metakirby5/codi.vim"
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
   use { "ChristianChiarulli/nvim-gps", branch = "text_hl"}
-  use "ChristianChiarulli/JABS.nvim"
+  use {
+    "ChristianChiarulli/JABS.nvim",
+    requires = { "kyazdani42/nvim-web-devicons" }, --optional
+  }
   use {
     "ghillb/cybu.nvim",
     branch = "v1.x", -- won't receive breaking changes
