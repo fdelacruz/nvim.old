@@ -106,11 +106,24 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["w"] = { "<cmd>w<CR>", "Write" },
+  ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
+  ["q"] = { "<cmd>q<CR>", "Quit" },
+  ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-  ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
+  -- ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
   ["gy"] = "Link",
+
+  p = {
+    name = "Packer",
+    c = { "<cmd>PackerCompile<cr>", "Compile" },
+    i = { "<cmd>PackerInstall<cr>", "Install" },
+    s = { "<cmd>PackerSync<cr>", "Sync" },
+    S = { "<cmd>PackerStatus<cr>", "Status" },
+    u = { "<cmd>PackerUpdate<cr>", "Update" },
+  },
 
   o = {
     name = "Options",
@@ -121,19 +134,10 @@ local mappings = {
     t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
   },
 
-  w = {
-    name = "Window",
+  s = {
+    name = "Split",
     s = { '<cmd>split<cr>', "HSplit" },
     v = { '<cmd>vsplit<cr>', "VSplit" },
-  },
-
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
   r = {
