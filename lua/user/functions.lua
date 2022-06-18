@@ -30,4 +30,8 @@ function M.toggle_diagnostics()
   end
 end
 
+function M.isempty(s)
+  return s == nil or s == ""
+end
+
 return M
