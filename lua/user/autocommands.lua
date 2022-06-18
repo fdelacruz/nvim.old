@@ -93,7 +93,7 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost", "Inse
     end
 
     if not isempty(value) and get_buf_option(0, "mod") then
-      local mod = require("user.icons").ui.Circle
+      local mod = require("user.icons").ui.Plus
       value = value .. " " .. "%#LineNr#" .. mod .. "%*"
     end
 
