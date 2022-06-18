@@ -10,8 +10,7 @@ local function isempty(s)
 end
 
 M.filename = function()
-  local filename = vim.fn.expand("%"):match "([^/]+)$"
-
+  local filename = vim.fn.expand "%:t"
   local extension = ""
   local file_icon = ""
   local file_icon_color = ""
@@ -19,7 +18,7 @@ M.filename = function()
   local default_file_icon_color = ""
 
   if not isempty(filename) then
-    extension = filename:match "^.+(%..+)$"
+    extension = vim.fn.expand "%:e"
 
     local default = false
 
@@ -39,6 +38,7 @@ M.filename = function()
       file_icon = default_file_icon
       file_icon_color = default_file_icon_color
     end
+
     return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. filename .. "%*"
   end
 end
