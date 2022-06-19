@@ -73,15 +73,6 @@ Next we need to install python support (node is optional)
   ```
   npm i -g neovim
   ```
----
-
-**NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
-
-> The computing scientist's main challenge is not to get confused by the complexities of his own making. 
-
-\- Edsger W. Dijkstra
-
----
 
 ## Fonts
 
@@ -89,7 +80,11 @@ Next we need to install python support (node is optional)
 
 - [codicon](https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf)
 - [An emoji font](https://github.com/googlefonts/noto-emoji/blob/main/fonts/NotoColorEmoji.ttf)
+
+**NOTE:**
+
+If you are seeing boxes without icons, try changing this line from `false` to `true`: [link](https://github.com/ChristianChiarulli/nvim/blob/ac41efa237caf3a498077df19a3f31ca4b35caf3/lua/user/icons.lua#L5)
+
 After moving fonts to `~/.local/share/fonts/`
 
 Run: `$ fc-cache -f -v`
-
