@@ -136,8 +136,8 @@ local mappings = {
 
   s = {
     name = "Split",
-    s = { '<cmd>split<cr>', "HSplit" },
-    v = { '<cmd>vsplit<cr>', "VSplit" },
+    s = { "<cmd>split<cr>", "HSplit" },
+    v = { "<cmd>vsplit<cr>", "VSplit" },
   },
 
   r = {
