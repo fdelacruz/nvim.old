@@ -30,7 +30,7 @@ git clone https://github.com/fdelacruz/Neovim-from-scratch.git ~/.config/nvim
 
 Run `nvim` and wait for the plugins to be installed 
 
-**NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
+**NOTE:** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
 
 ## Get healthy
 
@@ -85,7 +85,5 @@ After moving fonts to `~/.local/share/fonts/`
 
 Run: `$ fc-cache -f -v`
 
-**NOTE:**
-
-If you are seeing boxes without icons, try changing this line from `false` to `true`: [link](https://github.com/ChristianChiarulli/nvim/blob/ac41efa237caf3a498077df19a3f31ca4b35caf3/lua/user/icons.lua#L5)
+**NOTE:** If you are seeing boxes without icons, try changing this line from `false` to `true`: [link](https://github.com/ChristianChiarulli/nvim/blob/ac41efa237caf3a498077df19a3f31ca4b35caf3/lua/user/icons.lua#L5)
 
