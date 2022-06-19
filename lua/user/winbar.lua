@@ -59,7 +59,7 @@ local get_gps = function()
     return ""
   else
     if not f.isempty(gps_location) then
-      return " " .. icons.ui.ChevronRight .. " " .. gps_location
+      return icons.ui.ChevronRight .. " " .. gps_location
     else
       return ""
     end
@@ -99,7 +99,7 @@ M.get_winbar = function()
 
   if not f.isempty(value) then
     local gps_value = get_gps()
-    value = value .. gps_value
+    value = value .. " " .. gps_value
   end
 
   if not f.isempty(value) and f.get_buf_option "mod" then
