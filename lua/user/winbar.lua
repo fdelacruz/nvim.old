@@ -15,11 +15,6 @@ M.winbar_filetype_exclude = {
   "toggleterm",
 }
 
-local status_gps_ok, gps = pcall(require, "nvim-gps")
-if not status_gps_ok then
-  return
-end
-
 local get_filename = function()
   local filename = vim.fn.expand "%:t"
   local extension = vim.fn.expand "%:e"
@@ -45,10 +40,15 @@ local get_filename = function()
 end
 
 local get_gps = function()
-  local status_ok, gps_location = pcall(gps.get_location, {})
-  if not status_ok then
+  local status_gps_ok, gps = pcall(require, "nvim-gps")
+  if not status_gps_ok then
     return ""
   end
+
+  local status_ok, gps_location = pcall(gps.get_location, {})
+    if not status_ok then
+      return ""
+    end
 
   if not gps.is_available() or gps_location == "error" then
     return ""
