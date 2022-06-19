@@ -3,7 +3,7 @@
 -- or go here and upload the font file: https://mathew-kurian.github.io/CharacterMap/
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 vim.g.use_nerd_icons = false
-if (vim.fn.has "mac" == 1 or vim.g.use_nerd_icons) then
+if vim.fn.has "mac" == 1 or vim.g.use_nerd_icons then
   return {
     kind = {
       Text = "",
@@ -62,6 +62,8 @@ if (vim.fn.has "mac" == 1 or vim.g.use_nerd_icons) then
       Repo = "",
     },
     ui = {
+      ArrowClosed = "",
+      ArrowOpen = "",
       Lock = "",
       Circle = "",
       BigCircle = "",
@@ -163,6 +165,8 @@ else
       Repo = " ",
     },
     ui = {
+      ArrowClosed = "",
+      ArrowOpen = "",
       Lock = " ",
       Circle = " ",
       BigCircle = " ",
