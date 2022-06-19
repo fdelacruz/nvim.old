@@ -3,7 +3,6 @@ local M = {}
 local function _assign(old, new, k)
   local otype = type(old[k])
   local ntype = type(new[k])
-  print("hi")
   if (otype == "thread" or otype == "userdata") or (ntype == "thread" or ntype == "userdata") then
     vim.notify(string.format("warning: old or new attr %s type be thread or userdata", k))
   end
