@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  pattern = { "*.java" },
+  pattern = { "*.rs" },
   callback = function()
     vim.lsp.codelens.refresh()
   end,
