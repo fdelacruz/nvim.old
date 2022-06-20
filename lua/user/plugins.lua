@@ -81,7 +81,7 @@ return packer.startup(function(use)
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
   use { "ChristianChiarulli/nvim-gps", branch = "text_hl"}
   use {
-    "ChristianChiarulli/JABS.nvim",
+    "matbme/JABS.nvim",
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
   }
   use {
