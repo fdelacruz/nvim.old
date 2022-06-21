@@ -80,16 +80,8 @@ return packer.startup(function(use)
   use "metakirby5/codi.vim"
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
   use "SmiteshP/nvim-gps"
-  use {
-    "matbme/JABS.nvim",
-    requires = { "kyazdani42/nvim-web-devicons" }, --optional
-  }
-  use {
-    "ghillb/cybu.nvim",
-    branch = "v1.x", -- won't receive breaking changes
-    -- branch = "main", -- timely updates
-    requires = { "kyazdani42/nvim-web-devicons" }, --optional
-  }
+  use "matbme/JABS.nvim"
+  use "ghillb/cybu.nvim"
 
   -- tmux
   use { "aserowy/tmux.nvim",
@@ -156,7 +148,6 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  -- use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
 
@@ -178,7 +169,7 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
-  use "nvim-telescope/telescope-ui-select.nvim"
+  -- use "nvim-telescope/telescope-ui-select.nvim"
 
   -- Treesitter
   use {
