@@ -87,6 +87,15 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "Colorscheme" }, {
+  callback = function()
+    vim.cmd [[
+      highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+      highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+    ]]
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   pattern = { "*.rs" },
   callback = function()
@@ -99,4 +108,3 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
     vim.cmd "hi link illuminatedWord LspReferenceText"
   end,
 })
-
