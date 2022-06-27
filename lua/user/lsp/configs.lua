@@ -75,14 +75,3 @@ require('rust-tools').setup {
     },
   },
 }
-
-lspconfig.sumneko_lua.setup {
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
-    },
-  },
-}
