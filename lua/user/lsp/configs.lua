@@ -50,8 +50,7 @@ local function on_attach(client, bufnr)
   lsp_highlight_document(client)
 end
 
-local rust_tools = require "rust-tools"
-rust_tools.setup {
+require('rust-tools').setup {
   server = {
     on_attach = on_attach,
     settings = {
@@ -68,7 +67,7 @@ rust_tools.setup {
     },
   },
   tools = {
-    autoSetHints = false,
+    autoSetHints = true,
     hover_with_actions = true,
     inlay_hints = {
       show_parameter_hints = true,
