@@ -60,8 +60,7 @@ local branch = {
 local progress = {
   "progress",
   color = "SLProgress",
-  -- padding = 1,
-  padding = { left = 0, right = 1 },
+  padding = 1,
 
   -- fmt = function(str)
   --   print(vim.fn.expand(str))
