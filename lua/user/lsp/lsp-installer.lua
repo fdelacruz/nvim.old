@@ -9,6 +9,7 @@ local servers = {
   "tsserver",
   "pyright",
   "rust_analyzer",
+  "taplo",
 }
 
 local settings = {
