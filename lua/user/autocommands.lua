@@ -7,10 +7,8 @@
 --   end,
 -- })
 
-vim.cmd [[ autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
+vim.cmd [[ autocmd BufRead * autocmd FileType <buffer> ++once
+  \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
 ]]
 
 vim.api.nvim_create_autocmd({ "User" }, {
