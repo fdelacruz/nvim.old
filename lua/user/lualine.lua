@@ -32,14 +32,51 @@ local diff = {
   separator = "%#SLSeparator#" .. "│ " .. "%*",
 }
 
-local mode = {
-  "mode",
-  fmt = function(str)
-    return "" .. str .. ""
-  end,
-  padding = 1,
-
+local mode_map = {
+  ['n']    = 'NORMAL',
+  ['no']   = 'OP PENDING',
+  ['nov']  = 'OP PENDING CHAR',
+  ['noV']  = 'OP PENDING LINE',
+  ['no�'] = 'OP PENDING BLOCK',
+  ['niI']  = 'INSERT (NORMAL)',
+  ['niR']  = 'REPLACE (NORMAL)',
+  ['niV']  = 'V REPLACE (NORMAL)',
+  ['nt']   = 'NORMAL',
+  ['v']    = 'VISUAL',
+  ['vs']   = 'VISUAL',
+  ['V']    = 'V-LINE',
+  ['Vs']   = 'V-LINE',
+  ['�']   = 'V-BLOCK',
+  ['�s']  = 'V-BLOCK',
+  ['s']    = 'SELECT',
+  ['S']    = 'S-LINE',
+  ['�']   = 'S-BLOCK',
+  ['i']    = 'INSERT',
+  ['ic']   = 'INSERT',
+  ['ix']   = 'INSERT',
+  ['R']    = 'REPLACE',
+  ['Rc']   = 'REPLACE',
+  ['Rx']   = 'REPLACE',
+  ['Rv']   = 'V-REPLACE',
+  ['Rvc']  = 'V-REPLACE',
+  ['Rvx']  = 'V-REPLACE',
+  ['c']    = 'COMMAND',
+  ['cv']   = 'EX',
+  ['ce']   = 'EX',
+  ['r']    = 'REPLACE',
+  ['rm']   = 'MORE',
+  ['r?']   = 'CONFIRM',
+  ['!']    = 'SHELL',
+  ['t']    = 'TERMINAL',
 }
+
+-- local mode = {
+--   "mode",
+--   fmt = function(str)
+--     return "" .. str .. ""
+--   end,
+--   padding = 1,
+-- }
 
 local filetype = {
   "filetype",
@@ -120,7 +157,9 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = { mode },
+    lualine_a = {function ()
+        return mode_map[vim.api.nvim_get_mode().mode] or "__"
+    end},
     lualine_b = { branch, diagnostics },
     lualine_c = {},
     lualine_x = { diff, spaces, "encoding", filetype },
