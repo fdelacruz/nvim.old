@@ -50,28 +50,28 @@ local function on_attach(client, bufnr)
   lsp_highlight_document(client)
 end
 
-require('rust-tools').setup {
-  server = {
-    on_attach = on_attach,
-    settings = {
-      ["rust-analyzer"] = {
-        completion = {
-          postfix = {
-            enable = false,
-          },
-        },
-        checkOnSave = {
-          command = "clippy",
-        },
-      },
-    },
-  },
-  tools = {
-    autoSetHints = true,
-    hover_with_actions = true,
-    inlay_hints = {
-      show_parameter_hints = true,
-      show_variable_name = true,
-    },
-  },
-}
+-- require('rust-tools').setup {
+--   server = {
+--     on_attach = on_attach,
+--     settings = {
+--       ["rust-analyzer"] = {
+--         completion = {
+--           postfix = {
+--             enable = false,
+--           },
+--         },
+--         checkOnSave = {
+--           command = "clippy",
+--         },
+--       },
+--     },
+--   },
+--   tools = {
+--     autoSetHints = true,
+--     hover_with_actions = true,
+--     inlay_hints = {
+--       show_parameter_hints = true,
+--       show_variable_name = true,
+--     },
+--   },
+-- }

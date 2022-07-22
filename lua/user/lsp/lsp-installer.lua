@@ -67,7 +67,14 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
+  if server == "rust_analyzer" then
+    local rust_opts = require "user.lsp.settings.rust"
+    require("rust-tools").setup(rust_opts)
+    goto continue
+  end
+
   lspconfig[server].setup(opts)
+  ::continue::
 end
 
 -- TODO: add something to installer later
