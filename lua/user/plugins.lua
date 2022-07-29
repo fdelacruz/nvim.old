@@ -127,6 +127,8 @@ return packer.startup(function(use)
   }
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
+  -- TODO: set this up
+  use "rmagatti/goto-preview"
 
   -- Rust
   use "simrat39/rust-tools.nvim"
