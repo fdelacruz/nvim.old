@@ -57,6 +57,10 @@ return packer.startup(function(use)
   -- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "unblevable/quick-scope"
   use "phaazon/hop.nvim"
+  use {
+    "abecodes/tabout.nvim",
+    wants = { "nvim-treesitter" }, -- or require if not used so far
+  }
   use "nacro90/numb.nvim"
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
@@ -105,6 +109,7 @@ return packer.startup(function(use)
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
   }
+
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
