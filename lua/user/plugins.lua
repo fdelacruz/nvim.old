@@ -125,8 +125,8 @@ return packer.startup(function(use)
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   }
-
   use "RRethy/vim-illuminate"
+  use "j-hui/fidget.nvim"
 
   -- Rust
   use "simrat39/rust-tools.nvim"
