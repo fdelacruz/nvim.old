@@ -26,7 +26,7 @@ return {
         { "│", "FloatBorder" },
       },
       width = 60,
-      height = 30,
+      -- height = 30,
   },
   server = {
     on_attach = require("user.lsp.handlers").on_attach,
