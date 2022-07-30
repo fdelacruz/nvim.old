@@ -1,5 +1,7 @@
 local M = {}
 
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+
 M.setup = function()
   local icons = require "user.icons"
   local signs = {
@@ -48,14 +50,13 @@ M.setup = function()
 end
 
 local function lsp_highlight_document(client)
-  -- Set autocommands conditional on server_capabilities
-  if client.server_capabilities.document_highlight then
+  -- if client.resolved_capabilities.document_highlight then
     local status_ok, illuminate = pcall(require, "illuminate")
     if not status_ok then
       return
     end
     illuminate.on_attach(client)
-  end
+  -- end
 end
 
 local function lsp_keymaps(bufnr)
@@ -78,9 +79,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
-    client.server_capabilities.document_formatting = false
-  end
 
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
@@ -94,7 +92,8 @@ if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 function M.enable_format_on_save()
   vim.cmd [[
