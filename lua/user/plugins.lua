@@ -57,6 +57,8 @@ return packer.startup(function(use)
   -- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "unblevable/quick-scope"
   use "phaazon/hop.nvim"
+
+  -- Lua
   use {
     "abecodes/tabout.nvim",
     wants = { "nvim-treesitter" }, -- or require if not used so far
