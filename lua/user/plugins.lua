@@ -126,7 +126,6 @@ return packer.startup(function(use)
   use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
-  use "stevearc/aerial.nvim"
   use {
     "rmagatti/goto-preview",
     config = function()
