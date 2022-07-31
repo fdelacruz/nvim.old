@@ -9,8 +9,16 @@ vim.api.nvim_set_hl(0, "SLProgress", { fg = "#D4D4D4", bg = "#303030" })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#808080", bg = "#252525" })
 vim.api.nvim_set_hl(0, "SLLSP", { fg = "#5e81ac", bg = "#282c34" })
 
+local hide_in_width_60 = function()
+  return vim.fn.winwidth(0) > 60
+end
+
 local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
+end
+
+local hide_in_width_100 = function()
+  return vim.fn.winwidth(0) > 100
 end
 
 local icons = require "user.icons"
@@ -29,7 +37,7 @@ local diff = {
   "diff",
   colored = false,
   symbols = { added = icons.git.Add .. " ", modified = icons.git.Mod .. " ", removed = icons.git.Remove .. " " }, -- changes diff symbols
-  cond = hide_in_width,
+  cond = hide_in_width_60,
   separator = "%#SLSeparator#" .. "│ " .. "%*",
 }
 
@@ -175,15 +183,17 @@ local progress = {
 --   return "%#SLProgress#" .. chars[index] .. "%*"
 -- end
 
--- local current_signature = function()
---   if not pcall(require, "lsp_signature") then
---     return
---   end
---   local sig = require("lsp_signature").status_line(30)
---   -- return sig.label .. "🐼" .. sig.hint
---   return "%#SLSeparator#" .. sig.hint .. "%*"
--- end
-
+local current_signature = {
+  function()
+    if not pcall(require, "lsp_signature") then
+      return
+    end
+    local sig = require("lsp_signature").status_line(30)
+    -- return sig.label .. "🐼" .. sig.hint
+    return "%#SLSeparator#" .. sig.hint .. "%*"
+  end,
+  cond = hide_in_width_100,
+}
 
 local spaces = {
   function()
@@ -191,6 +201,7 @@ local spaces = {
   end,
   padding = 0,
   separator = "%#SLSeparator#" .. " │" .. "%*",
+  cond = hide_in_width_100,
 }
 
 local location = {
@@ -213,7 +224,8 @@ lualine.setup {
         return mode_map[vim.api.nvim_get_mode().mode] or "__"
     end},
     lualine_b = { branch, diagnostics },
-    lualine_c = {},
+    -- lualine_c = {},
+    lualine_c = { current_signature },
     lualine_x = { diff, language_server, spaces, "encoding", filetype },
     -- lualine_x = { diff, spaces, filetype },
     lualine_y = { progress },
