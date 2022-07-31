@@ -74,3 +74,15 @@ local ipython3 = Terminal:new({ cmd = "ipython3", hidden = true })
 function _IPYTHON_TOGGLE()
 	ipython3:toggle()
 end
+
+local cargo_run = Terminal:new({ cmd = "cargo run", hidden = true })
+
+function _CARGO_RUN()
+	cargo_run:toggle()
+end
+
+local cargo_test = Terminal:new({ cmd = "cargo test", hidden = true })
+
+function _CARGO_TEST()
+	cargo_test:toggle()
+end
