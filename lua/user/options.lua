@@ -41,7 +41,10 @@ local options = {
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.opt.fillchars = { eob = " " }
+-- vim.opt.fillchars = { eob = " " }
+vim.opt.fillchars = vim.opt.fillchars + "vertleft: "
+vim.opt.fillchars = vim.opt.fillchars + "vertright: "
+vim.opt.fillchars = vim.opt.fillchars + 'eob: '
 
 vim.opt.shortmess:append "c"
 
@@ -66,3 +69,9 @@ vim.cmd [[
   inoremap <left>   <nop>
   inoremap <right>  <nop>
 ]]
+
+vim.filetype.add {
+  extension = {
+    conf = "dosini",
+  },
+}
