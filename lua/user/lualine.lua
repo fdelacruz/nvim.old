@@ -41,7 +41,7 @@ local language_server = {
       return
     end
 
-    -- loop through all clients and print client.name
+    -- loop through all clients
     local client_names = {}
 
     for _, client in ipairs(clients) do
@@ -52,7 +52,6 @@ local language_server = {
 
     -- join client names with commas
     local client_names_str = table.concat(client_names, ", ")
-    print(client_names_str)
 
     return "%#SLLSP#" .. " " .. client_names_str .. "%*"
   end,
