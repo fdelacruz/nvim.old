@@ -126,12 +126,6 @@ return packer.startup(function(use)
   use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
-  use {
-    "rmagatti/goto-preview",
-    config = function()
-      require('goto-preview').setup {}
-    end
-  }
 
   -- Rust
   use "simrat39/rust-tools.nvim"
