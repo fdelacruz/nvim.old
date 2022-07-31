@@ -8,6 +8,15 @@ if not snip_status_ok then
   return
 end
 
+local tabnine_status_ok, tabnine = pcall(require, "user.tabnine")
+if not tabnine_status_ok then
+  return
+end
+
+local compare = require "cmp.config.compare"
+
+tabnine.setup()
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -114,6 +123,21 @@ cmp.setup {
     { name = "cmp_tabnine", group_index = 2},
     { name = "path", group_index = 2 },
     { name = "emoji", group_index  = 2},
+  },
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      compare.offset,
+      compare.exact,
+      -- compare.scopes,
+      compare.score,
+      compare.recently_used,
+      compare.locality,
+      -- compare.kind,
+      compare.sort_text,
+      compare.length,
+      compare.order,
+    },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
