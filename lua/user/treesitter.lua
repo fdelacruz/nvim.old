@@ -29,14 +29,14 @@ configs.setup {
     disable = { "xml", "markdown" },
   },
   rainbow = {
-    enable = false,
+    enable = true,
     colors = {
       "Gold",
       "Orchid",
       "DodgerBlue",
-      -- "Cornsilk",
-      -- "Salmon",
-      -- "LawnGreen",
+      "Cornsilk",
+      "Salmon",
+      "LawnGreen",
     },
     disable = { "html" },
   },
