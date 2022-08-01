@@ -193,6 +193,7 @@ local current_signature = {
     return "%#SLSeparator#" .. sig.hint .. "%*"
   end,
   cond = hide_in_width_100,
+  padding = 0,
 }
 
 local spaces = {
