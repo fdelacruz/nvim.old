@@ -5,7 +5,7 @@ end
 
 toggleterm.setup({
 	size = 20,
-	open_mapping = [[<c-\>]],
+	open_mapping = [[<M-\>]],
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
@@ -86,3 +86,19 @@ local cargo_test = Terminal:new({ cmd = "cargo test", hidden = true })
 function _CARGO_TEST()
 	cargo_test:toggle()
 end
+
+local opts = { silent = true }
+
+local keymap = vim.keymap.set
+
+keymap("n", "<M-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
+keymap("t", "<M-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
+keymap("i", "<M-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
+
+keymap("n", "<M-2>", "<cmd>2ToggleTerm size=60 direction=vertical<cr>", opts)
+keymap("t", "<M-2>", "<cmd>2ToggleTerm size=60 direction=vertical<cr>", opts)
+keymap("i", "<M-2>", "<cmd>2ToggleTerm size=60 direction=vertical<cr>", opts)
+
+keymap("n", "<M-3>", "<cmd>3ToggleTerm size=10 direction=horizontal | set cmdheight=1<cr>", opts)
+keymap("t", "<M-3>", "<cmd>3ToggleTerm size=10 direction=horizontal | set cmdheight=1<cr>", opts)
+keymap("i", "<M-3>", "<cmd>3ToggleTerm size=10 direction=horizontal | set cmdheight=1<cr>", opts)
