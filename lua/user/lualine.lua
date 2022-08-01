@@ -170,38 +170,35 @@ local mode_map = {
 
 local filetype = {
   "filetype",
-  -- fmt = function(str)
-  --   local buf_ft = vim.bo.filetype
-  --   local ui_filetypes = {
-  --     "help",
-  --     "packer",
-  --     "neogitstatus",
-  --     "NvimTree",
-  --     "Trouble",
-  --     "lir",
-  --     "Outline",
-  --     "spectre_panel",
-  --     "toggleterm",
-  --     "DressingSelect",
-  --     "",
-  --   }
-  --   print(buf_ft)
-  --
-  --   if contains(ui_filetypes, buf_ft) then
-  --     return M.filetype
-  --   end
-  --
-  --   local file_icon, file_icon_color = require("nvim-web-devicons").get_icon_color("", buf_ft, { default = true })
-  --
-  --   local hl_group = "FileIconColor" .. buf_ft
-  --   vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color, bg = "#282c34" })
-  --
-  --   M.filetype = "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. buf_ft
-  --   return M.filetype
-  -- end,
+  fmt = function(str)
+    local ui_filetypes = {
+      "help",
+      "packer",
+      "neogitstatus",
+      "NvimTree",
+      "Trouble",
+      "lir",
+      "Outline",
+      "spectre_panel",
+      "toggleterm",
+      "DressingSelect",
+      "",
+    }
+
+    if str == "toggleterm" then
+      local term = " " .. vim.api.nvim_buf_get_var(0, "toggle_number")
+      return term
+    end
+
+    if contains(ui_filetypes, str) then
+      return ""
+    else
+      return str
+
+    end
+  end,
   icons_enabled = true,
-  -- icon = nil,
-    padding = { left = 1, right = 0 },
+  padding = { left = 1, right = 0 },
 }
 
 local branch = {
@@ -217,18 +214,6 @@ local progress = {
   "progress",
   color = "SLProgress",
   padding = 1,
-
-  -- fmt = function(str)
-  --   print(vim.fn.expand(str))
-  --   if str == "1%" then
-  --     return "TOP"
-  --   end
-  --   if str == "100%" then
-  --     return "BOT"
-  --   end
-  --   return str
-  -- end,
-  -- padding = 0,
 }
 
 -- cool function for progress
@@ -244,11 +229,16 @@ local progress = {
 
 local current_signature = {
   function()
+    local buf_ft = vim.bo.filetype
+
+    if buf_ft == "toggleterm" then
+      return ""
+    end
+
     if not pcall(require, "lsp_signature") then
-      return
+      return ""
     end
     local sig = require("lsp_signature").status_line(30)
-    -- return sig.label .. "🐼" .. sig.hint
     return "%#SLSeparator#" .. sig.hint .. "%*"
   end,
   cond = hide_in_width_100,
