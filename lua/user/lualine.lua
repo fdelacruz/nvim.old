@@ -1,3 +1,4 @@
+M = {}
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
   return
@@ -43,8 +44,36 @@ local diff = {
 
 local language_server = {
   function()
-    local clients = vim.lsp.buf_get_clients()
+    local buf_ft = vim.bo.filetype
+    local ui_filetypes = {
+      "help",
+      "packer",
+      "neogitstatus",
+      "NvimTree",
+      "Trouble",
+      "lir",
+      "Outline",
+      "spectre_panel",
+      "toggleterm",
+      "DressingSelect",
+      "",
+    }
 
+    -- check if value in table
+    local function contains(t, value)
+      for _, v in pairs(t) do
+        if v == value then
+          return true
+        end
+      end
+      return false
+    end
+
+    if contains(ui_filetypes, buf_ft) then
+      return M.language_servers
+    end
+
+    local clients = vim.lsp.buf_get_clients()
     local client_names = {}
 
     for _, client in pairs(clients) do
@@ -52,8 +81,6 @@ local language_server = {
         table.insert(client_names, client.name)
       end
     end
-
-    local buf_ft = vim.bo.filetype
 
     -- add formatter
     local s = require "null-ls.sources"
@@ -79,14 +106,16 @@ local language_server = {
     local client_names_str = table.concat(client_names, ", ")
 
     -- check client_names_str if empty
+    local language_servers = ""
     local client_names_str_len = #client_names_str
-    if client_names_str_len == 0 then
-      return ""
-    else
-      -- 
-      return "%#SLLSP#" .. "[" .. client_names_str .. "]" .. "%*"
+    if client_names_str_len ~= 0 then
+      language_servers = "%#SLLSP#" .. "[" .. client_names_str .. "]" .. "%*"
     end
-  end,
+
+    M.language_servers = language_servers
+    return language_servers
+    end,
+
   padding = 0,
   cond = hide_in_width,
   separator = "%#SLSeparator#" .. " │ " .. "%*",
