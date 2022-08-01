@@ -10,15 +10,15 @@ vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#808080", bg = "#252525" })
 vim.api.nvim_set_hl(0, "SLLSP", { fg = "#5e81ac", bg = "#282c34" })
 
 local hide_in_width_60 = function()
-  return vim.fn.winwidth(0) > 60
+  return vim.o.columns > 60
 end
 
 local hide_in_width = function()
-  return vim.fn.winwidth(0) > 80
+  return vim.o.columns > 80
 end
 
 local hide_in_width_100 = function()
-  return vim.fn.winwidth(0) > 100
+  return vim.o.columns > 100
 end
 
 local icons = require "user.icons"
