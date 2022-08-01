@@ -4,6 +4,16 @@ if not status_ok then
   return
 end
 
+-- check if value in table
+local function contains(t, value)
+  for _, v in pairs(t) do
+    if v == value then
+      return true
+    end
+  end
+  return false
+end
+
 vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#303030" })
 vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#D4D4D4", bg = "#303030", bold = false })
 vim.api.nvim_set_hl(0, "SLProgress", { fg = "#D4D4D4", bg = "#303030" })
@@ -59,16 +69,6 @@ local language_server = {
       "",
     }
 
-    -- check if value in table
-    local function contains(t, value)
-      for _, v in pairs(t) do
-        if v == value then
-          return true
-        end
-      end
-      return false
-    end
-
     if contains(ui_filetypes, buf_ft) then
       return M.language_servers
     end
@@ -76,6 +76,7 @@ local language_server = {
     local clients = vim.lsp.buf_get_clients()
     local client_names = {}
 
+    -- add client
     for _, client in pairs(clients) do
       if client.name ~= "copilot" and client.name ~= "null-ls" then
         table.insert(client_names, client.name)
@@ -139,7 +140,7 @@ local mode_map = {
   ['�s']  = 'V-BLOCK',
   ['s']    = 'SELECT',
   ['S']    = 'S-LINE',
-  ['�']   = 'S-BLOCK',
+  -- ['�']   = 'S-BLOCK',
   ['i']    = 'INSERT',
   ['ic']   = 'INSERT',
   ['ix']   = 'INSERT',
@@ -169,6 +170,35 @@ local mode_map = {
 
 local filetype = {
   "filetype",
+  -- fmt = function(str)
+  --   local buf_ft = vim.bo.filetype
+  --   local ui_filetypes = {
+  --     "help",
+  --     "packer",
+  --     "neogitstatus",
+  --     "NvimTree",
+  --     "Trouble",
+  --     "lir",
+  --     "Outline",
+  --     "spectre_panel",
+  --     "toggleterm",
+  --     "DressingSelect",
+  --     "",
+  --   }
+  --   print(buf_ft)
+  --
+  --   if contains(ui_filetypes, buf_ft) then
+  --     return M.filetype
+  --   end
+  --
+  --   local file_icon, file_icon_color = require("nvim-web-devicons").get_icon_color("", buf_ft, { default = true })
+  --
+  --   local hl_group = "FileIconColor" .. buf_ft
+  --   vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color, bg = "#282c34" })
+  --
+  --   M.filetype = "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. buf_ft
+  --   return M.filetype
+  -- end,
   icons_enabled = true,
   -- icon = nil,
     padding = { left = 1, right = 0 },
