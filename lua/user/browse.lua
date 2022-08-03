@@ -3,6 +3,10 @@ if not status_ok then
   return
 end
 
+browse.setup {
+  provider = "duckduckgo",
+}
+
 local bookmarks = {
   "https://github.com",
   "https://github.com/christianchiarulli/nvim",
