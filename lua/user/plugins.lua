@@ -71,11 +71,11 @@ return packer.startup(function(use)
   use "MattesGroeger/vim-bookmarks"
   use "Mephistophiles/surround.nvim"
   use "tpope/vim-repeat"
-  use "Shatur/neovim-session-manager"
   use "metakirby5/codi.vim"
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
   use "matbme/JABS.nvim"
   use "aserowy/tmux.nvim"
+  use "rmagatti/auto-session"
 
   --UI
   use { "stevearc/dressing.nvim" }
@@ -163,6 +163,7 @@ return packer.startup(function(use)
   -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
   -- use "filipdutescu/renamer.nvim"
   -- use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  -- use "Shatur/neovim-session-manager"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
