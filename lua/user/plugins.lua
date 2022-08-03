@@ -66,7 +66,7 @@ return packer.startup(function(use)
   use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
-  use "Mephistophiles/surround.nvim"
+  use "kylechui/nvim-surround"
   use "tpope/vim-repeat"
   use "metakirby5/codi.vim"
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
