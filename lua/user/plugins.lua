@@ -43,18 +43,15 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  -- use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  -- use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
-  -- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "unblevable/quick-scope"
   use "phaazon/hop.nvim"
 
@@ -164,6 +161,9 @@ return packer.startup(function(use)
   -- use "filipdutescu/renamer.nvim"
   -- use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   -- use "Shatur/neovim-session-manager"
+  -- use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  -- use "akinsho/bufferline.nvim"
+  -- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
