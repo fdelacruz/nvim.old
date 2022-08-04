@@ -273,8 +273,8 @@ lualine.setup {
         return mode_map[vim.api.nvim_get_mode().mode] or "__"
     end},
     lualine_b = { branch, diagnostics },
-    -- lualine_c = {},
-    lualine_c = { current_signature },
+    lualine_c = {},
+    -- lualine_c = { current_signature },
     lualine_x = { diff, language_server, spaces, "encoding", filetype },
     -- lualine_x = { diff, spaces, filetype },
     lualine_y = { progress },
