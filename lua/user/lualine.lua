@@ -15,8 +15,10 @@ local function contains(t, value)
 end
 
 vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#303030" })
+vim.api.nvim_set_hl(0, "SLTermIcon", { fg = "#b668cd", bg = "#282c34" })
 vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#D4D4D4", bg = "#303030", bold = false })
 vim.api.nvim_set_hl(0, "SLProgress", { fg = "#D4D4D4", bg = "#303030" })
+vim.api.nvim_set_hl(0, "SLFG", { fg = "#abb2bf", bg = "#282c34" })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#808080", bg = "#252525" })
 vim.api.nvim_set_hl(0, "SLLSP", { fg = "#5e81ac", bg = "#282c34" })
 
@@ -185,7 +187,12 @@ local filetype = {
 
     if str == "toggleterm" then
       -- 
-      local term = " " .. vim.api.nvim_buf_get_var(0, "toggle_number")
+      local term = "%#SLTermIcon#"
+        .. " "
+        .. "%*"
+        .. "%#SLFG#"
+        .. vim.api.nvim_buf_get_var(0, "toggle_number")
+        .. "%*"
       return term
     end
 
@@ -238,7 +245,13 @@ local current_signature = {
       return ""
     end
     local sig = require("lsp_signature").status_line(30)
-    return "%#SLSeparator#" .. sig.hint .. "%*"
+    local hint = sig.hint
+
+    if not require("user.functions").isempty(hint) then
+      return "%#SLSeparator#│ " .. hint .. "%*"
+    end
+
+    return ""
   end,
   cond = hide_in_width_100,
   padding = 0,
