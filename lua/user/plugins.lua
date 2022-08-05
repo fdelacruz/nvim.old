@@ -61,7 +61,8 @@ return packer.startup(function(use)
     wants = { "nvim-treesitter" }, -- or require if not used so far
   }
   use "nacro90/numb.nvim"
-  use "norcalli/nvim-colorizer.lua"
+  -- use "norcalli/nvim-colorizer.lua"
+  use "NvChad/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
   use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
