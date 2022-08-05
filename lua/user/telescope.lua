@@ -97,6 +97,7 @@ telescope.setup {
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         ["<C-l>"] = actions.complete_tag,
         ["<C-h>"] = actions.which_key, -- keys from pressing <c-h>
+        ["<Esc>"] = actions.close,
       },
 
       n = {
