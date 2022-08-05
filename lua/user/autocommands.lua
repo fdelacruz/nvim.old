@@ -21,11 +21,22 @@ vim.api.nvim_create_autocmd({ "User" }, {
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "DressingSelect" },
+  pattern = { "Jaq", "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "DressingSelect" },
   callback = function()
     vim.cmd [[
       nnoremap <silent> <buffer> q :close<CR> 
       set nobuflisted 
+    ]]
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "Jaq" },
+  callback = function()
+    vim.cmd [[
+      nnoremap <silent> <buffer> <m-r> :close<CR>
+      " nnoremap <silent> <buffer> <m-r> <NOP>
+      set nobuflisted
     ]]
   end,
 })
