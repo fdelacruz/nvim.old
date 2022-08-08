@@ -72,7 +72,7 @@ return packer.startup(function(use)
   use "metakirby5/codi.vim"
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
   use "matbme/JABS.nvim"
-  use "aserowy/tmux.nvim"
+  -- use "aserowy/tmux.nvim"
   use "rmagatti/auto-session"
 
   --UI
