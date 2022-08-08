@@ -95,8 +95,9 @@ local m_mappings = {
   ["."] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Harpoon Next" },
   [","] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" },
   j = { "<cmd>silent BookmarkNext<cr>", "Next" },
+  s = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
   k = { "<cmd>silent BookmarkPrev<cr>", "Prev" },
-  s = { "<cmd>silent BookmarkShowAll<cr>", "Show All" },
+  S = { "<cmd>silent BookmarkShowAll<cr>", "Show All" },
   x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
   [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 }
