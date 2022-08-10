@@ -87,7 +87,7 @@ cmp.setup {
 
       if entry.source.name == "cmp_tabnine" then
         vim_item.kind = icons.misc.Robot
-        vim_item.kind_hl_group = "CmpItemKindTabnine"
+        vim_item.kind_hl_group = ""
       end
 
       if entry.source.name == "emoji" then
