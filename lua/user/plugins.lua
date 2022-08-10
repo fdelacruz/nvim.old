@@ -131,7 +131,7 @@ return packer.startup(function(use)
   use "j-hui/fidget.nvim"
 
   -- Rust
-  use { "christianchiarulli/rust-tools.nvim", branch = "handler_nil_check" }
+  use { "simrat39/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" }
   use "Saecki/crates.nvim"
 
   -- Telescope
