@@ -102,11 +102,11 @@ cmp.setup {
 
       -- NOTE: order matters
       vim_item.menu = ({
-        nvim_lsp = "",
-        nvim_lua = "",
-        luasnip = "",
-        buffer = "",
-        path = "",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[api]",
+        luasnip = "[snip]",
+        buffer = "[buf]",
+        path = "[path]",
         emoji = "",
       })[entry.source.name]
       return vim_item
@@ -152,10 +152,10 @@ cmp.setup {
 }
 
 -- lsp_document_symbols
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline("/", {
     sources = cmp.config.sources({
-      { name = 'nvim_lsp_document_symbol' }
+      { name = "nvim_lsp_document_symbol" }
     }, {
-      { name = 'buffer' }
+      { name = "buffer" }
     })
 })
