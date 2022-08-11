@@ -50,5 +50,5 @@ local opts = { noremap = true, silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
-keymap("n", "<M-o>", "<cmd>BrowseBookmarks<cr>", opts)
-keymap("n", "<M-i>", "<cmd>BrowseInputSearch<cr>", opts)
+keymap("n", "<M-o>", "<cmd>BrowseBookmarks<CR>", opts)
+keymap("n", "<M-i>", "<cmd>BrowseInputSearch<CR>", opts)

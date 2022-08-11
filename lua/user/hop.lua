@@ -7,5 +7,5 @@ hop.setup()
 
 local keymap = vim.api.nvim_set_keymap
 
-keymap("", "s", ":HopChar1<cr>", { silent = true })
-keymap("", "S", ":HopWord<cr>", { silent = true })
+keymap("", "s", ":HopChar1<CR>", { silent = true })
+keymap("", "S", ":HopWord<CR>", { silent = true })

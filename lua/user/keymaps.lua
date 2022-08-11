@@ -28,9 +28,9 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Tabs --
-keymap("n", "<m-t>", ":tabnew<cr>", opts)
-keymap("n", "<m-c>", ":tabclose<cr>", opts)
-keymap("n", "<m-\\>", ":tabonly<cr>", opts)
+keymap("n", "<M-t>", ":tabnew<cr>", opts)
+keymap("n", "<M-c>", ":tabclose<cr>", opts)
+keymap("n", "<M-\\>", ":tabonly<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -120,9 +120,9 @@ vim.api.nvim_set_keymap("n", "<CR>", "<cmd>NeoZoomToggle<CR>", { noremap = true,
 vim.api.nvim_set_keymap("n", "=", "<cmd>JABSOpen<CR>", { noremap = true, silent = true, nowait = true })
 
 -- alt binds
-keymap("n", "<m-s>", "<cmd>split<cr>", opts)
-keymap("n", "<m-v>", "<cmd>vsplit<cr>", opts)
-keymap("n", "<m-q>", "<cmd>:q<cr>", opts)
+keymap("n", "<M-s>", "<cmd>split<cr>", opts)
+keymap("n", "<M-v>", "<cmd>vsplit<cr>", opts)
+keymap("n", "<M-q>", "<cmd>:q<cr>", opts)
 
 M.show_documentation = function()
   local filetype = vim.bo.filetype
@@ -139,7 +139,7 @@ end
 vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>", opts)
 
 -- Comment
-keymap("n", "<m-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<m-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
+keymap("n", "<M-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymap("x", "<M-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
 
 return M

@@ -15,29 +15,29 @@ local opts = {
 local mappings = {
   L = {
     name = "Rust",
-    h = { "<cmd>RustToggleInlayHints<Cr>", "Toggle Hints" },
-    r = { "<cmd>RustRunnables<Cr>", "Runnables" },
-    -- r = { "<cmd>lua _CARGO_RUN()<cr>", "Cargo Run" },
-    t = { "<cmd>lua _CARGO_TEST()<cr>", "Cargo Test" },
-    m = { "<cmd>RustExpandMacro<Cr>", "Expand Macro" },
-    c = { "<cmd>RustOpenCargo<Cr>", "Open Cargo" },
-    p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
-    -- j = { "<cmd>RustJoinLines<Cr>", "Join Lines" },
-    -- s = { "<cmd>RustStartStandaloneServerForBuffer<Cr>", "Start Server Buf" },
-    d = { "<cmd>RustDebuggables<Cr>", "Debuggables" },
-    v = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
+    h = { "<cmd>RustToggleInlayHints<CR>", "Toggle Hints" },
+    r = { "<cmd>RustRunnables<CR>", "Runnables" },
+    -- r = { "<cmd>lua _CARGO_RUN()<CR>", "Cargo Run" },
+    t = { "<cmd>lua _CARGO_TEST()<CR>", "Cargo Test" },
+    m = { "<cmd>RustExpandMacro<CR>", "Expand Macro" },
+    c = { "<cmd>RustOpenCargo<CR>", "Open Cargo" },
+    p = { "<cmd>RustParentModule<CR>", "Parent Module" },
+    -- j = { "<cmd>RustJoinLines<CR>", "Join Lines" },
+    -- s = { "<cmd>RustStartStandaloneServerForBuffer<CR>", "Start Server Buf" },
+    d = { "<cmd>RustDebuggables<CR>", "Debuggables" },
+    v = { "<cmd>RustViewCrateGraph<CR>", "View Crate Graph" },
     R = {
-      "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
+      "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<CR>",
       "Reload Workspace",
     },
-    -- S = { "<cmd>RustSSR<Cr>", "SSR" },
-    -- o = { "<cmd>RustOpenExternalDocs<Cr>", "Open External Docs" },
-    -- h = { "<cmd>RustSetInlayHints<Cr>", "Enable Hints" },
-    -- H = { "<cmd>RustDisableInlayHints<Cr>", "Disable Hints" },
-    -- a = { "<cmd>RustHoverActions<Cr>", "Hover Actions" },
-    -- a = { "<cmd>RustHoverRange<Cr>", "Hover Range" },
-    -- j = { "<cmd>RustMoveItemDown<Cr>", "Move Item Down" },
-    -- k = { "<cmd>RustMoveItemUp<Cr>", "Move Item Up" },
+    -- S = { "<cmd>RustSSR<CR>", "SSR" },
+    -- o = { "<cmd>RustOpenExternalDocs<CR>", "Open External Docs" },
+    -- h = { "<cmd>RustSetInlayHints<CR>", "Enable Hints" },
+    -- H = { "<cmd>RustDisableInlayHints<CR>", "Disable Hints" },
+    -- a = { "<cmd>RustHoverActions<CR>", "Hover Actions" },
+    -- a = { "<cmd>RustHoverRange<CR>", "Hover Range" },
+    -- j = { "<cmd>RustMoveItemDown<CR>", "Move Item Down" },
+    -- k = { "<cmd>RustMoveItemUp<CR>", "Move Item Up" },
   },
 }
 
@@ -62,22 +62,22 @@ local vertical_term = Terminal:new {
     vim.api.nvim_buf_set_keymap(
       term.bufnr,
       "n",
-      "<m-4>",
-      "<cmd>4ToggleTerm size=60 direction=vertical<cr>",
+      "<M-4>",
+      "<cmd>4ToggleTerm size=60 direction=vertical<CR>",
       { noremap = true, silent = true }
     )
     vim.api.nvim_buf_set_keymap(
       term.bufnr,
       "t",
       "<m-4>",
-      "<cmd>4ToggleTerm size=60 direction=vertical<cr>",
+      "<cmd>4ToggleTerm size=60 direction=vertical<CR>",
       { noremap = true, silent = true }
     )
     vim.api.nvim_buf_set_keymap(
       term.bufnr,
       "i",
-      "<m-4>",
-      "<cmd>4ToggleTerm size=60 direction=vertical<cr>",
+      "<M-4>",
+      "<cmd>4ToggleTerm size=60 direction=vertical<CR>",
       { noremap = true, silent = true }
     )
   end,
@@ -88,5 +88,5 @@ function _CARGO_TERM()
   vertical_term:toggle(60)
 end
 
-vim.api.nvim_set_keymap("n", "<m-4>", "<cmd>lua _CARGO_TERM()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<m-4>", "<cmd>lua _CARGO_TERM()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-4>", "<cmd>lua _CARGO_TERM()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<M-4>", "<cmd>lua _CARGO_TERM()<CR>", { noremap = true, silent = true })
