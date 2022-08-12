@@ -102,7 +102,8 @@ keymap(
   opts
 )
 vim.api.nvim_set_keymap("n", "<M-g>", "<cmd>Telescope git_branches<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
+-- vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
+vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>", opts)
 keymap("n", "<Tab>", "<cmd>Telescope projects<CR>", opts)
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
 keymap("n", "<C-s>", "<cmd>vsplit<CR>", opts)
