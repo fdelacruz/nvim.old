@@ -109,7 +109,7 @@ M.on_attach = function(client, bufnr)
     require("lsp_inlay_hints").setup_autocmd(bufnr, "typescript/inlayHints")
   end
 
-  if client.server_capabilities.inlayHintProvider then
+  if client.server_capabilities.inlayHintProvider and not "rust-analyzer" then
     require("lsp-inlayhints").setup_autocmd(bufnr)
   end
 end

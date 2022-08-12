@@ -133,7 +133,7 @@ return packer.startup(function(use)
   use { "christianchiarulli/lsp-inlayhints.nvim", branch = "user-config" }
 
   -- Rust
-  use { "christianchiarulli/rust-tools.nvim", branch = "handler_nil_check" }
+  use { "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" }
   use "Saecki/crates.nvim"
 
   -- Telescope
