@@ -130,10 +130,12 @@ return packer.startup(function(use)
   use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
+  -- use "lvimuser/lsp-inlayhints.nvim"
   -- use "christianchiarulli/lsp-inlay-hints"
   use { "christianchiarulli/lsp-inlayhints.nvim", branch = "user-config" }
 
   -- Rust
+  -- use "simrat39/rust-tools.nvim"
   use { "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" }
   use "Saecki/crates.nvim"
 
