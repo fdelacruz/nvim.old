@@ -114,7 +114,7 @@ local language_server = {
     end
 
     M.language_servers = language_servers
-    return language_servers
+    return language_servers:gsub(", anonymous source", "")
     end,
 
   padding = 0,
