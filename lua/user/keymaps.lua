@@ -106,7 +106,7 @@ vim.api.nvim_set_keymap("n", "<M-g>", "<cmd>Telescope git_branches<CR>", opts)
 vim.api.nvim_set_keymap(
   "n",
   "<Tab>",
-  "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>",
+  "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>",
   opts
 )
 vim.api.nvim_set_keymap(
