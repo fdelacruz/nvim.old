@@ -123,7 +123,7 @@ vim.api.nvim_set_keymap("n", "=", "<cmd>JABSOpen<CR>", { noremap = true, silent 
 -- alt binds
 keymap("n", "<M-s>", "<cmd>split<cr>", opts)
 keymap("n", "<M-v>", "<cmd>vsplit<cr>", opts)
-keymap("n", "<M-q>", "<cmd>:q<cr>", opts)
+-- keymap("n", "<M-q>", "<cmd>:q<cr>", opts)
 
 M.show_documentation = function()
   local filetype = vim.bo.filetype
@@ -138,6 +138,17 @@ M.show_documentation = function()
   end
 end
 vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>", opts)
+
+vim.cmd [[
+  function! QuickFixToggle()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+      copen
+    else
+      cclose
+    endif
+  endfunction
+]]
+keymap("n", "<m-q>", ":call QuickFixToggle()<cr>", opts)
 
 -- Comment
 keymap("n", "<M-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
