@@ -130,7 +130,7 @@ return packer.startup(function(use)
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
   -- use "christianchiarulli/lsp-inlay-hints"
-  use "lvimuser/lsp-inlayhints.nvim"
+  use { "christianchiarulli/lsp-inlayhints.nvim", branch = "user-config" }
 
   -- Rust
   use { "christianchiarulli/rust-tools.nvim", branch = "handler_nil_check" }
