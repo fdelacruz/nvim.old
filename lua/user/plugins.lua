@@ -140,6 +140,9 @@ return packer.startup(function(use)
   use { "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" }
   use "Saecki/crates.nvim"
 
+  -- Lua
+  use "folke/lua-dev.nvim"
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
