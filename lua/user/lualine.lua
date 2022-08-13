@@ -40,7 +40,10 @@ local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
-  symbols = { error = icons.diagnostics.Error .. " ", warn = icons.diagnostics.Warning .. " " },
+  symbols = {
+    error = icons.diagnostics.Error .. "%*" .. " ",
+    warn = icons.diagnostics.Warning .. "%*" .. " "
+  },
   colored = true,
   update_in_insert = false,
   always_visible = false,
@@ -80,7 +83,7 @@ local language_server = {
 
     -- add client
     for _, client in pairs(clients) do
-        table.insert(client_names, client.name)
+      table.insert(client_names, client.name)
     end
 
     -- add formatter
@@ -115,7 +118,7 @@ local language_server = {
 
     M.language_servers = language_servers
     return language_servers:gsub(", anonymous source", "")
-    end,
+  end,
 
   padding = 0,
   cond = hide_in_width,
@@ -123,41 +126,41 @@ local language_server = {
 }
 
 local mode_map = {
-  ['n']    = 'NORMAL',
-  ['no']   = 'OP PENDING',
-  ['nov']  = 'OP PENDING CHAR',
-  ['noV']  = 'OP PENDING LINE',
-  ['no�'] = 'OP PENDING BLOCK',
-  ['niI']  = 'INSERT (NORMAL)',
-  ['niR']  = 'REPLACE (NORMAL)',
-  ['niV']  = 'V REPLACE (NORMAL)',
-  ['nt']   = 'NORMAL',
-  ['v']    = 'VISUAL',
-  ['vs']   = 'VISUAL',
-  ['V']    = 'V-LINE',
-  ['Vs']   = 'V-LINE',
-  ['�']   = 'V-BLOCK',
-  ['�s']  = 'V-BLOCK',
-  ['s']    = 'SELECT',
-  ['S']    = 'S-LINE',
+  ["n"] = "NORMAL",
+  ["no"] = "OP PENDING",
+  ["nov"] = "OP PENDING CHAR",
+  ["noV"] = "OP PENDING LINE",
+  ["no�"] = "OP PENDING BLOCK",
+  ["niI"] = "INSERT (NORMAL)",
+  ["niR"] = "REPLACE (NORMAL)",
+  ["niV"] = "V REPLACE (NORMAL)",
+  ["nt"] = "NORMAL",
+  ["v"] = "VISUAL",
+  ["vs"] = "VISUAL",
+  ["V"] = "V-LINE",
+  ["Vs"] = "V-LINE",
+  ["�"] = "V-BLOCK",
+  ["�s"] = "V-BLOCK",
+  ["s"] = "SELECT",
+  ["S"] = "S-LINE",
   -- ['�']   = 'S-BLOCK',
-  ['i']    = 'INSERT',
-  ['ic']   = 'INSERT',
-  ['ix']   = 'INSERT',
-  ['R']    = 'REPLACE',
-  ['Rc']   = 'REPLACE',
-  ['Rx']   = 'REPLACE',
-  ['Rv']   = 'V-REPLACE',
-  ['Rvc']  = 'V-REPLACE',
-  ['Rvx']  = 'V-REPLACE',
-  ['c']    = 'COMMAND',
-  ['cv']   = 'EX',
-  ['ce']   = 'EX',
-  ['r']    = 'REPLACE',
-  ['rm']   = 'MORE',
-  ['r?']   = 'CONFIRM',
-  ['!']    = 'SHELL',
-  ['t']    = 'TERMINAL',
+  ["i"] = "INSERT",
+  ["ic"] = "INSERT",
+  ["ix"] = "INSERT",
+  ["R"] = "REPLACE",
+  ["Rc"] = "REPLACE",
+  ["Rx"] = "REPLACE",
+  ["Rv"] = "V-REPLACE",
+  ["Rvc"] = "V-REPLACE",
+  ["Rvx"] = "V-REPLACE",
+  ["c"] = "COMMAND",
+  ["cv"] = "EX",
+  ["ce"] = "EX",
+  ["r"] = "REPLACE",
+  ["rm"] = "MORE",
+  ["r?"] = "CONFIRM",
+  ["!"] = "SHELL",
+  ["t"] = "TERMINAL",
 }
 
 -- local mode = {
@@ -200,7 +203,6 @@ local filetype = {
       return ""
     else
       return str
-
     end
   end,
   icons_enabled = true,
@@ -210,10 +212,10 @@ local filetype = {
 local branch = {
   "branch",
   icons_enabled = true,
-  icon = "%#SLGitIcon#" .. "" .. "%*" .. "%#SLBranchName#",
+  icon = "%#SLGitIcon#" .. " " .. "%*" .. "%#SLBranchName#",
   color = "Constant",
   colored = false,
-  -- icon = "",
+  padding = 0,
 }
 
 local progress = {
@@ -268,7 +270,7 @@ local spaces = {
 
 local location = {
   "location",
-  padding = 1
+  padding = 1,
 }
 
 lualine.setup {
@@ -282,9 +284,11 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = {function ()
+    lualine_a = {
+      function()
         return mode_map[vim.api.nvim_get_mode().mode] or "__"
-    end},
+      end,
+    },
     lualine_b = { branch, diagnostics },
     lualine_c = {},
     -- lualine_c = { current_signature },
