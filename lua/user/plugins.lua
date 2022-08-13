@@ -75,6 +75,7 @@ return packer.startup(function(use)
   use "matbme/JABS.nvim"
   -- use "aserowy/tmux.nvim"
   use "rmagatti/auto-session"
+  use "rmagatti/session-lens"
 
   --UI
   use { "stevearc/dressing.nvim" }
