@@ -115,7 +115,7 @@ vim.api.nvim_set_keymap(
   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>",
   opts
 )
-keymap("n", "<C-h>", "<cmd>Telescope projects<CR>", opts)
+-- keymap("n", "<C-h>", "<cmd>Telescope projects<CR>", opts)
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
 keymap("n", "<C-s>", "<cmd>vsplit<CR>", opts)
 keymap("n", "<C-z>", "<cmd>ZenMode<CR>", opts)
