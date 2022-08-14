@@ -16,6 +16,7 @@ end
 
 vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#303030" })
 vim.api.nvim_set_hl(0, "SLTermIcon", { fg = "#b668cd", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLTelescope", { fg = "#D7BA7D", bg = "#282c34" })
 vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#D4D4D4", bg = "#303030", bold = false })
 vim.api.nvim_set_hl(0, "SLProgress", { fg = "#D4D4D4", bg = "#303030" })
 vim.api.nvim_set_hl(0, "SLFG", { fg = "#abb2bf", bg = "#282c34" })
@@ -41,8 +42,8 @@ local diagnostics = {
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
   symbols = {
-    error = icons.diagnostics.Error .. "%*" .. " ",
-    warn = icons.diagnostics.Warning .. "%*" .. " "
+    error = icons.diagnostics.Error .. " ",
+    warn =  icons.diagnostics.Warning .. " ",
   },
   colored = true,
   update_in_insert = false,
@@ -187,6 +188,13 @@ local filetype = {
       "DressingSelect",
       "",
     }
+
+    if str == "TelescopePrompt" then
+      local term = "%#SLTelescope#"
+        .. " "
+        .. "%*"
+      return term
+    end
 
     if str == "toggleterm" then
       -- 
