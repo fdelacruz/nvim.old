@@ -72,6 +72,7 @@ local language_server = {
       "spectre_panel",
       "toggleterm",
       "DressingSelect",
+      "TelescopePrompt",
       "",
     }
 
@@ -247,10 +248,9 @@ local current_signature = {
   function()
     local buf_ft = vim.bo.filetype
 
-    if buf_ft == "toggleterm" then
+    if buf_ft == "toggleterm" or buf_ft == "TelescopePrompt" then
       return ""
     end
-
     if not pcall(require, "lsp_signature") then
       return ""
     end
@@ -258,7 +258,8 @@ local current_signature = {
     local hint = sig.hint
 
     if not require("user.functions").isempty(hint) then
-      return "%#SLSeparator#│ " .. hint .. "%*"
+      -- return "%#SLSeparator#│ " .. hint .. "%*"
+      return "%#SLSeparator# " .. hint .. "%*"
     end
 
     return ""
