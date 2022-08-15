@@ -134,6 +134,7 @@ return packer.startup(function(use)
   -- use "lvimuser/lsp-inlayhints.nvim"
   -- use "christianchiarulli/lsp-inlay-hints"
   use { "christianchiarulli/lsp-inlayhints.nvim", branch = "user-config" }
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
   -- Rust
   -- use "simrat39/rust-tools.nvim"

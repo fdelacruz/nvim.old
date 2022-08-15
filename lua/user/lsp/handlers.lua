@@ -25,7 +25,9 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
+    virtual_lines = false,
     virtual_text = false,
+
     -- show signs
     signs = {
       active = signs,
@@ -37,7 +39,7 @@ M.setup = function()
       focusable = true,
       style = "minimal",
       border = "rounded",
-      source = "always",
+      source = "if_many", --[[ or "always" ]]
       header = "",
       prefix = "",
       -- width = 40,

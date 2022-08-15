@@ -117,6 +117,7 @@ vim.api.nvim_set_keymap(
 )
 -- keymap("n", "<C-h>", "<cmd>Telescope projects<CR>", opts)
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
+keymap("n", "<C-s>", "<cmd>lua require('lsp_lines').toggle()<CR>", opts)
 keymap("n", "<C-z>", "<cmd>ZenMode<CR>", opts)
 keymap("n", "<C-n>", ":e ~/Notes/<CR>", opts)
 keymap("n", "-", ":lua require'lir.float'.toggle()<CR>", opts)
