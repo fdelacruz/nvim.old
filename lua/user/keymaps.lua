@@ -117,7 +117,6 @@ vim.api.nvim_set_keymap(
 )
 -- keymap("n", "<C-h>", "<cmd>Telescope projects<CR>", opts)
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
-keymap("n", "<C-s>", "<cmd>vsplit<CR>", opts)
 keymap("n", "<C-z>", "<cmd>ZenMode<CR>", opts)
 keymap("n", "<C-n>", ":e ~/Notes/<CR>", opts)
 keymap("n", "-", ":lua require'lir.float'.toggle()<CR>", opts)
@@ -161,6 +160,7 @@ vim.cmd [[
   endfunction
 ]]
 keymap("n", "<m-q>", ":call QuickFixToggle()<cr>", opts)
+keymap("n", "<c-l>", "<cmd>lua vim.lsp.codelens.run()<cr>", opts)
 
 -- Comment
 keymap("n", "<M-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
