@@ -73,6 +73,8 @@ local language_server = {
       "toggleterm",
       "DressingSelect",
       "TelescopePrompt",
+      "lspinfo",
+      "lsp-installer",
       "",
     }
 
