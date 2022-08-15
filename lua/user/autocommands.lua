@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "Jaq", "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "DressingSelect" },
   callback = function()
     vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR> 
+      nnoremap <silent> <buffer> <Esc> :close<CR> 
       set nobuflisted 
     ]]
   end,
