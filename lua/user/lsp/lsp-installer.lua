@@ -22,6 +22,7 @@ local settings = {
       -- server_pending = "",
       -- server_uninstalled = "",
     },
+    border = "rounded",
     keymaps = {
       toggle_server_expand = "<CR>",
       install_server = "i",
