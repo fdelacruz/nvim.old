@@ -131,9 +131,7 @@ return packer.startup(function(use)
   use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
-  -- use "lvimuser/lsp-inlayhints.nvim"
-  -- use "christianchiarulli/lsp-inlay-hints"
-  use { "christianchiarulli/lsp-inlayhints.nvim", branch = "user-config" }
+  use "lvimuser/lsp-inlayhints.nvim"
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
   -- Rust
@@ -142,7 +140,8 @@ return packer.startup(function(use)
   use "Saecki/crates.nvim"
 
   -- Lua
-  use "folke/lua-dev.nvim"
+  -- use "folke/lua-dev.nvim"
+  use "christianchiarulli/lua-dev.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

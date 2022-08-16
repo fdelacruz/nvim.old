@@ -107,16 +107,16 @@ M.on_attach = function(client, bufnr)
   attach_navic(client, bufnr)
 
   -- for tsserver
-  if client.name == "tsserver" then
-    require("lsp_inlay_hints").setup_autocmd(bufnr, "typescript/inlayHints")
-  end
+  -- if client.name == "tsserver" then
+  --   require("lsp_inlay_hints").setup_autocmd(bufnr, "typescript/inlayHints")
+  -- end
 
   -- if client.name ~= "rust_analyzer" then
-  if client.name ~= "pyright" then
-    if client.server_capabilities.inlayHintProvider then
-      require("lsp-inlayhints").setup_autocmd(bufnr)
-    end
-  end
+  -- if client.name ~= "pyright" then
+  --   if client.server_capabilities.inlayHintProvider then
+  --     require("lsp-inlayhints").setup_autocmd(bufnr)
+  --   end
+  -- end
 end
 
 function M.enable_format_on_save()
