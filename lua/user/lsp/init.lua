@@ -27,7 +27,6 @@ end
 
 require "user.lsp.lsp-signature"
 require("user.lsp.mason")
-require "user.lsp.configs"
 require("user.lsp.handlers").setup()
 require "user.lsp.null-ls"
 
