@@ -170,15 +170,19 @@ telescope.setup {
     },
     lsp_references = {
       theme = "dropdown",
+      initial_mode = "normal",
     },
     lsp_definitions = {
       theme = "dropdown",
+      initial_mode = "normal",
     },
     lsp_declarations = {
       theme = "dropdown",
+      initial_mode = "normal",
     },
     lsp_implementations = {
       theme = "dropdown",
+      initial_mode = "normal",
     },
 
     -- Default configuration for builtin pickers goes here:
