@@ -36,7 +36,7 @@ packer.init {
       return require("packer.util").float { border = "rounded" }
     end,
   },
-  max_jobs = 50
+  max_jobs = 50,
 }
 
 -- Install your plugins here
