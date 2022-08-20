@@ -168,6 +168,18 @@ telescope.setup {
     colorscheme = {
       -- enable_preview = true,
     },
+    lsp_references = {
+      theme = "dropdown",
+    },
+    lsp_definitions = {
+      theme = "dropdown",
+    },
+    lsp_declarations = {
+      theme = "dropdown",
+    },
+    lsp_implementations = {
+      theme = "dropdown",
+    },
 
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
