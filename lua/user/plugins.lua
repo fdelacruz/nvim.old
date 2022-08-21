@@ -98,6 +98,7 @@ return packer.startup(function(use)
   use "folke/todo-comments.nvim"
   use "andymass/vim-matchup"
   use "is0n/jaq-nvim"
+  use "junegunn/vim-slash"
 
   -- Colorschemes
   use "rebelot/kanagawa.nvim"
