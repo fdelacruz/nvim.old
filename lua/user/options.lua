@@ -37,6 +37,7 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- minimal number of screen lines to keep above and below
   sidescrolloff = 8,                       -- minimal number of screen lines to keep left and right
+  title = true,
 }
 
 vim.g.loaded_netrw = 1
