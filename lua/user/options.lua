@@ -35,7 +35,7 @@ local options = {
   signcolumn = "auto",                     -- only show the sign column when need to
   textwidth = 79,                          -- set a text limit column
   wrap = false,                            -- display lines as one long line
-  scrolloff = 8,                           -- minimal number of screen lines to keep above and below
+  -- scrolloff = 8,                        -- minimal number of screen lines to keep above and below
   sidescrolloff = 8,                       -- minimal number of screen lines to keep left and right
   title = false,                           -- set window's title
 }
