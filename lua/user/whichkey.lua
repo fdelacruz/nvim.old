@@ -139,6 +139,8 @@ local mappings = {
 
   o = {
     name = "Options",
+    c = { '<cmd>lua vim.g.cmp_active=false<cr>', "Completion off" },
+    C = { '<cmd>lua vim.g.cmp_active=true<cr>', "Completion on" },
     w = { '<Cmd>lua require("user.functions").toggle_option("wrap")<CR>', "Wrap" },
     r = { '<Cmd>lua require("user.functions").toggle_option("relativenumber")<CR>', "Relative" },
     l = { '<Cmd>lua require("user.functions").toggle_option("cursorline")<CR>', "Cursorline" },
