@@ -46,5 +46,9 @@ vim.notify = function(msg, ...)
     return
   end
 
+  if msg:match "method textDocument" then
+    return
+  end
+
   notify_filter(msg, ...)
 end
