@@ -94,6 +94,12 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "folke/which-key.nvim"
   use "folke/zen-mode.nvim"
+  use {
+  "folke/twilight.nvim",
+  config = function()
+    require("twilight").setup {}
+  end
+}
   use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
   use "andymass/vim-matchup"
