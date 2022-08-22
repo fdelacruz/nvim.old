@@ -21,7 +21,7 @@ zen_mode.setup {
   },
   plugins = {
     gitsigns = { enabled = false },
-    tmux = { enabled = false },
+    tmux = { enabled = true },
     twilight = { enabled = true },
   },
   on_open = function()
