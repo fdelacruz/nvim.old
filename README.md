@@ -1,6 +1,22 @@
-# Neovim from scratch
+# My Neovim config
 
-**IMPORTANT** Requires [Neovim v0.6.0](https://github.com/neovim/neovim/releases/tag/v0.6.0) or [Nightly](https://github.com/neovim/neovim/releases/tag/nightly). 
+**IMPORTANT** Requires [Neovim v0.6.0](https://github.com/neovim/neovim/releases/tag/v0.6.0) or [Nightly](https://github.com/neovim/neovim/releases/tag/nightly)
+
+Install [build prerequisites](https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites) on your system
+## Install Neovim (Source)
+Download source code
+```
+git clone https://github.com/neovim/neovim
+```
+Build Release 
+```
+cd neovim && make CMAKE_BUILD_TYPE=Release
+```
+Install
+```
+sudo make install
+```
+
 ## Install Neovim (Homebrew)
 ```
 brew install neovim
