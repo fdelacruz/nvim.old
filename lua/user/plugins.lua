@@ -74,7 +74,7 @@ return packer.startup(function(use)
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
   use "matbme/JABS.nvim"
   -- use "aserowy/tmux.nvim"
-  use "rmagatti/auto-session"
+  use { "rmagatti/auto-session", branch = "dir-changed-fixes" }
   use "rmagatti/session-lens"
 
   --UI
