@@ -178,6 +178,13 @@ return packer.startup(function(use)
   use "mattn/webapi-vim"
   use "rhysd/conflict-marker.vim"
 
+  -- DAP
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
+  -- use "theHamsta/nvim-dap-virtual-text"
+  -- use "ravenxrz/DAPInstall.nvim"
+  -- use "nvim-telescope/telescope-dap.nvim"
+
   -- Plugin Graveyard
   -- use "romgrk/nvim-treesitter-context"
   -- use "mizlan/iswap.nvim"
