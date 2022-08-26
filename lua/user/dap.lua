@@ -97,10 +97,6 @@ dapui.setup {
   },
 }
 
-local icons = require "user.icons"
-
-vim.fn.sign_define("DapBreakpoint", { text = icons.ui.Bug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end
