@@ -172,3 +172,12 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 })
 
 vim.api.nvim_create_autocmd("VimLeavePre", { command = [[silent! FidgetClose]] })
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "dap*", },
+  callback = function()
+    vim.cmd [[
+      set colorcolumn = ""
+    ]]
+  end,
+})
