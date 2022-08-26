@@ -168,14 +168,16 @@ keymap("n", "<M-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<
 keymap("x", "<M-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
 
 -- DAP
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<CR>", opts)
-keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<CR>", opts)
-keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<CR>", opts)
-keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<CR>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<CR>", opts)
+keymap("n", "<Leader>db", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<Leader>dB", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
+keymap("n", "<Leader>dp", "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+keymap("n", "<Leader>dc", "<Cmd>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<Leader>di", "<Cmd>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<Leader>do", "<Cmd>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<Leader>dO", "<Cmd>lua require'dap'.step_out()<CR>", opts)
+keymap("n", "<Leader>dr", "<Cmd>lua require'dap'.repl.toggle()<CR>", opts)
+keymap("n", "<Leader>dl", "<Cmd>lua require'dap'.run_last()<CR>", opts)
+keymap("n", "<Leader>du", "<Cmd>lua require'dapui'.toggle()<CR>", opts)
+keymap("n", "<Leader>dt", "<Cmd>lua require'dap'.terminate()<CR>", opts)
 
 return M
