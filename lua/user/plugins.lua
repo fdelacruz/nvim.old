@@ -181,7 +181,31 @@ return packer.startup(function(use)
   -- DAP
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
-  -- use "theHamsta/nvim-dap-virtual-text"
+  use {
+    "theHamsta/nvim-dap-virtual-text",
+    config = function()
+      local ok, nvim_dap_virtual_text = pcall(require, "nvim-dap-virtual-text")
+      if not ok then
+        return
+      end
+      nvim_dap_virtual_text.setup {
+        enabled = true,
+        enabled_commands = true,
+        highlight_changed_variables = true,
+        highlight_new_as_changed = false,
+        show_stop_reason = true,
+        commented = false,
+        only_first_definition = true,
+        all_references = false,
+        filter_references_pattern = "<module",
+        -- experimental features:
+        virt_text_pos = "eol",
+        all_frames = false,
+        virt_lines = false,
+        virt_text_win_col = nil,
+      }
+    end,
+  }
   -- use "ravenxrz/DAPInstall.nvim"
   -- use "nvim-telescope/telescope-dap.nvim"
 
