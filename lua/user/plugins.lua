@@ -206,8 +206,8 @@ return packer.startup(function(use)
       }
     end,
   }
+  use "nvim-telescope/telescope-dap.nvim"
   -- use "ravenxrz/DAPInstall.nvim"
-  -- use "nvim-telescope/telescope-dap.nvim"
 
   -- Plugin Graveyard
   -- use "romgrk/nvim-treesitter-context"
