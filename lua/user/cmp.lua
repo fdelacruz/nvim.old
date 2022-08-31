@@ -141,10 +141,10 @@ cmp.setup {
       -- NOTE: order matters
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        nvim_lua = "[api]",
-        luasnip = "[snip]",
-        buffer = "[buf]",
-        path = "[path]",
+        nvim_lua = "[API]",
+        luasnip = "[SNIP]",
+        buffer = "[BUF]",
+        path = "[PATH]",
         emoji = "",
       })[entry.source.name]
       return vim_item
