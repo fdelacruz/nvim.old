@@ -40,8 +40,6 @@ local options = {
   title = false,                           -- set window's title
 }
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 -- vim.opt.fillchars = { eob = " " }
 -- vim.opt.fillchars = vim.opt.fillchars + "vertleft: "
 -- vim.opt.fillchars = vim.opt.fillchars + "vertright: "
@@ -55,7 +53,6 @@ vim.opt.shortmess:append "c"
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]

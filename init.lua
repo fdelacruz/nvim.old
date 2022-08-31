@@ -1,3 +1,4 @@
+require "user.disable_builtin"
 require "user.hot-reload"
 require "user.keymaps"
 require "user.plugins"
