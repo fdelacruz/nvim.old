@@ -43,7 +43,7 @@ local diagnostics = {
   sections = { "error", "warn" },
   symbols = {
     error = icons.diagnostics.Error .. " ",
-    warn =  icons.diagnostics.Warning .. " ",
+    warn = icons.diagnostics.Warning .. " ",
   },
   colored = true,
   update_in_insert = false,
@@ -193,9 +193,7 @@ local filetype = {
     }
 
     if str == "TelescopePrompt" then
-      local term = "%#SLTelescope#"
-        .. " "
-        .. "%*"
+      local term = "%#SLTelescope#" .. " " .. "%*"
       return term
     end
 
@@ -284,6 +282,12 @@ local location = {
   padding = 1,
 }
 
+local mode = {
+  function()
+    return mode_map[vim.api.nvim_get_mode().mode] or "__"
+  end,
+}
+
 lualine.setup {
   options = {
     globalstatus = true,
@@ -295,11 +299,7 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = {
-      function()
-        return mode_map[vim.api.nvim_get_mode().mode] or "__"
-      end,
-    },
+    lualine_a = { mode },
     lualine_b = { branch, diagnostics },
     lualine_c = {},
     -- lualine_c = { current_signature },
