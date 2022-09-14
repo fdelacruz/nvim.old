@@ -61,7 +61,12 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 -- keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 -- keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+
+-- greatest remaps ever
 keymap("v", "p", '"_dP', opts)
+
+keymap("n", "d", '"_d', opts)
+keymap("v", "d", '"_d', opts)
 
 -- Visual Block --
 -- Move text up and down
