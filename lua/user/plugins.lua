@@ -101,7 +101,7 @@ return packer.startup(function(use)
   end
 }
   use "karb94/neoscroll.nvim"
-  use "B4mbus/todo-comments.nvim"
+  use "folke/todo-comments.nvim"
   use "andymass/vim-matchup"
   use "is0n/jaq-nvim"
   use "junegunn/vim-slash"
