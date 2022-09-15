@@ -68,6 +68,10 @@ keymap("v", "p", '"_dP', opts)
 keymap("n", "d", '"_d', opts)
 keymap("v", "d", '"_d', opts)
 
+keymap("n", "x", 'd', opts)
+keymap("v", "x", 'd', opts)
+
+
 -- Visual Block --
 -- Move text up and down
 -- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
