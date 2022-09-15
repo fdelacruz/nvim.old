@@ -63,11 +63,15 @@ keymap("v", ">", ">gv", opts)
 -- keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 
 -- greatest remaps ever
+
+-- paste - do not change clipboard
 keymap("v", "p", '"_dP', opts)
 
+-- delete - do not change clipboard
 keymap("n", "d", '"_d', opts)
 keymap("v", "d", '"_d', opts)
 
+-- cut - to clipboard
 keymap("n", "x", 'd', opts)
 keymap("v", "x", 'd', opts)
 
