@@ -164,7 +164,7 @@ local mode_map = {
   ["rm"] = "more",
   ["r?"] = "confirm",
   ["!"] = "shell",
-  ["t"] = "terminaL",
+  ["t"] = "terminal",
 }
 
 -- local mode = {
