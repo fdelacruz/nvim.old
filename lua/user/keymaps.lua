@@ -116,12 +116,12 @@ keymap(
 )
 vim.api.nvim_set_keymap("n", "<M-g>", "<cmd>Telescope git_branches<CR>", opts)
 -- vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
-vim.api.nvim_set_keymap(
-  "n",
-  "<Tab>",
-  "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>",
-  opts
-)
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "<Tab>",
+--   "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>",
+--   opts
+-- )
 vim.api.nvim_set_keymap(
   "n",
   "<S-Tab>",
@@ -132,7 +132,7 @@ vim.api.nvim_set_keymap(
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
 keymap("n", "<C-s>", "<cmd>lua require('lsp_lines').toggle()<CR>", opts)
 keymap("n", "<C-z>", "<cmd>ZenMode<CR>", opts)
-keymap("n", "<C-n>", ":e ~/Notes/<CR>", opts)
+-- keymap("n", "<C-n>", ":e ~/Notes/<CR>", opts)
 keymap("n", "-", ":lua require'lir.float'.toggle()<CR>", opts)
 -- keymap("n", "<C-\\>", "<cmd>vsplit<CR>", opts)
 -- vim.cmd[[nnoremap c* /\<<c-R>=expand('<cword>')<CR>\>\c<CR>``cgn]]
