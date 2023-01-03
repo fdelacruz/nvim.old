@@ -37,6 +37,31 @@ end
 
 local icons = require "user.icons"
 
+local virtual_env = {
+  function()
+    local function env_cleanup(venv)
+      if string.find(venv, "/") then
+        local final_venv = venv
+        for w in venv:gmatch "([^/]+)" do
+          final_venv = w
+        end
+        venv = final_venv
+      end
+      return venv
+    end
+
+    if vim.bo.filetype == "python" then
+      local venv = os.getenv "CONDA_DEFAULT_ENV" or os.getenv "VIRTUAL_ENV"
+      if venv then
+        return string.format("ⓔ ", env_cleanup(venv))
+      end
+    end
+    return ""
+  end,
+  color = { fg = "green", bg = "#282c34" },
+  cond = hide_in_width,
+}
+
 local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
@@ -300,7 +325,7 @@ lualine.setup {
   },
   sections = {
     lualine_a = { mode },
-    lualine_b = { branch, diagnostics },
+    lualine_b = { branch, virtual_env, diagnostics},
     lualine_c = {},
     -- lualine_c = { current_signature },
     lualine_x = { diff, language_server, spaces, "encoding", filetype },
