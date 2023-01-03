@@ -71,6 +71,7 @@ local diagnostics = {
     warn = icons.diagnostics.Warning .. " ",
   },
   colored = true,
+  color = { bg = "#282c34" },
   update_in_insert = false,
   always_visible = false,
 }
