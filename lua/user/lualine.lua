@@ -108,12 +108,12 @@ local language_server = {
       return M.language_servers
     end
 
-    local clients = vim.lsp.get_active_clients()
-    local client_names = {}
+    local buf_clients = vim.lsp.get_active_clients()
+    local buf_client_names = {}
 
     -- add client
-    for _, client in pairs(clients) do
-      table.insert(client_names, client.name)
+    for _, client in pairs(buf_clients) do
+      table.insert(buf_client_names, client.name)
     end
 
     -- add formatter
@@ -130,14 +130,16 @@ local language_server = {
     local formatter = registered["NULL_LS_FORMATTING"]
     local linter = registered["NULL_LS_DIAGNOSTICS"]
     if formatter ~= nil then
-      vim.list_extend(client_names, formatter)
+      vim.list_extend(buf_client_names, formatter)
     end
     if linter ~= nil then
-      vim.list_extend(client_names, linter)
+      vim.list_extend(buf_client_names, linter)
     end
 
     -- join client names with commas
-    local client_names_str = table.concat(client_names, ", ")
+    local unique_client_names = vim.fn.uniq(buf_client_names)
+
+    local client_names_str = table.concat(unique_client_names, ", ")
 
     -- check client_names_str if empty
     local language_servers = ""
