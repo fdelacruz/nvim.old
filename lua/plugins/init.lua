@@ -8,7 +8,13 @@ return {
   "ahmedkhalf/project.nvim",
   "lewis6991/impatient.nvim",
   "lukas-reineke/indent-blankline.nvim",
-  "unblevable/quick-scope",
+  {
+    "unblevable/quick-scope",
+    lazy = false,
+    init = function()
+      vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
+    end,
+  },
   "phaazon/hop.nvim",
 
   -- Lua
