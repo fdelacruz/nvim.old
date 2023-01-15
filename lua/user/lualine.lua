@@ -79,6 +79,8 @@ local diagnostics = {
 local diff = {
   "diff",
   colored = false,
+  colored = true,
+  color = { bg = "#282c34" },
   symbols = { added = icons.git.Add .. " ", modified = icons.git.Mod .. " ", removed = icons.git.Remove .. " " }, -- changes diff symbols
   cond = hide_in_width_60,
   separator = "%#SLSeparator#" .. "│ " .. "%*",
@@ -329,6 +331,7 @@ lualine.setup {
   sections = {
     lualine_a = { mode },
     lualine_b = { branch, virtual_env, diagnostics},
+    lualine_b = { branch, virtual_env, diagnostics, diff },
     lualine_c = {},
     -- lualine_c = { current_signature },
     lualine_x = { diff, language_server, spaces, "encoding", filetype },
