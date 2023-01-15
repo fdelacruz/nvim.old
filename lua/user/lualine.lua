@@ -298,7 +298,7 @@ local current_signature = {
 
 local spaces = {
   function()
-    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+    return icons.ui.Tab .. " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
   end,
   padding = 0,
   separator = "%#SLSeparator#" .. " │" .. "%*",
