@@ -15,6 +15,5 @@ require("lazy").setup("plugins", {
 	checker = {
 		enabled = true,
     concurrency = 1,
-    notify = false,
 	},
 })
