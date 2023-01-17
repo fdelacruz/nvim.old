@@ -22,4 +22,23 @@ require("lazy").setup("plugins", {
 		enabled = true,
     concurrency = 1,
 	},
+  performance = {
+    cache = {
+      enabled = true,
+      -- disable_events = {},
+    },
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "rplugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    }
+  }
 })
