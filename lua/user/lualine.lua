@@ -340,14 +340,14 @@ lualine.setup {
         cond = require("lazy.status").has_updates,
         color = { bg = "#282c34", fg = "#ff9e64" },
       },
-      -- {
-      --   function()
-      --     local stats = require("lazy").stats()
-      --     local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-      --     return "" .. ms .. "ms"
-      --   end,
-      --   color = { fg = "#f6c177" },
-      -- },
+      {
+        function()
+          local stats = require("lazy").stats()
+          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+          return "" .. ms .. "ms"
+        end,
+        color = { fg = "#f6c177" },
+      },
       language_server,
       spaces,
       "encoding",
