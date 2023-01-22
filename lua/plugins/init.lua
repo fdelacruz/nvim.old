@@ -3,7 +3,7 @@ return {
   "windwp/nvim-autopairs",
   { "numToStr/Comment.nvim", event = "BufRead" },
   "moll/vim-bbye",
-  { "nvim-lualine/lualine.nvim", lazy = true },
+  "nvim-lualine/lualine.nvim",
   { "akinsho/toggleterm.nvim", event = "VeryLazy" },
   "ahmedkhalf/project.nvim",
   "lewis6991/impatient.nvim",
@@ -55,7 +55,7 @@ return {
   "christianchiarulli/lir.nvim",
   "goolord/alpha-nvim",
   { "folke/which-key.nvim", event = "VeryLazy" },
-  { "folke/zen-mode.nvim", lazy = true },
+  "folke/zen-mode.nvim",
   {
     "folke/twilight.nvim",
     config = function()
@@ -87,18 +87,17 @@ return {
       "cmp-nvim-lua"
     },
   }, -- The completion plugin
-  { "hrsh7th/cmp-buffer", lazy = true },
-  { "hrsh7th/cmp-path", lazy = true },
-  { "hrsh7th/cmp-cmdline", lazy = true },
-  { "hrsh7th/cmp-nvim-lsp-document-symbol", lazy = true },
-  { "saadparwaiz1/cmp_luasnip", lazy = true },
-  { "hrsh7th/cmp-nvim-lsp", lazy = true },
-  { "hrsh7th/cmp-emoji", lazy = true },
-  { "hrsh7th/cmp-nvim-lua", lazy = true },
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "hrsh7th/cmp-nvim-lsp-document-symbol",
+  "saadparwaiz1/cmp_luasnip",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-emoji",
+  "hrsh7th/cmp-nvim-lua",
   {
     "tzachar/cmp-tabnine", commit = "1a8fd2795e4317fd564da269cc64a2fa17ee854e",
     build = "./install.sh",
-    lazy = true,
     dependencies = "hrsh7th/nvim-cmp",
   },
 
@@ -107,14 +106,14 @@ return {
   "rafamadriz/friendly-snippets",
 
   -- LSP
-  { "neovim/nvim-lspconfig", lazy = true },
+  "neovim/nvim-lspconfig",
   -- "williamboman/nvim-lsp-installer",
   "williamboman/mason.nvim",
-  { "williamboman/mason-lspconfig.nvim", lazy = true },
-  { "jose-elias-alvarez/null-ls.nvim", lazy = true },
+  "williamboman/mason-lspconfig.nvim",
+  "jose-elias-alvarez/null-ls.nvim",
   "simrat39/symbols-outline.nvim",
   "ray-x/lsp_signature.nvim",
-  { "b0o/SchemaStore.nvim", lazy = true },
+  "b0o/SchemaStore.nvim",
   "folke/trouble.nvim",
   { "RRethy/vim-illuminate", event = "VeryLazy" },
   "j-hui/fidget.nvim",
@@ -124,16 +123,16 @@ return {
 
   -- Rust
   -- "simrat39/rust-tools.nvim",
-  { "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" },
+  "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite",
   "Saecki/crates.nvim",
 
   -- Lua
   "christianchiarulli/lua-dev.nvim",
 
   -- Telescope
-  { "nvim-telescope/telescope.nvim", lazy = true },
-  { "tom-anders/telescope-vim-bookmarks.nvim", lazy = true },
-  { "nvim-telescope/telescope-media-files.nvim", lazy = true },
+  "nvim-telescope/telescope.nvim",
+  "tom-anders/telescope-vim-bookmarks.nvim",
+  "nvim-telescope/telescope-media-files.nvim",
   "lalitmee/browse.nvim",
 
   -- Treesitter
