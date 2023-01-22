@@ -1,7 +1,10 @@
 return {
   "nvim-lua/plenary.nvim",
   "windwp/nvim-autopairs",
-  { "numToStr/Comment.nvim", event = "BufRead" },
+  { "numToStr/Comment.nvim",
+    keys = { { "gcc" }, { "gbc" }, { "gc", mode = "v" }, { "gb", mode = "v" } },
+    config = true
+  },
   "moll/vim-bbye",
   "nvim-lualine/lualine.nvim",
   { "akinsho/toggleterm.nvim", event = "VeryLazy" },
