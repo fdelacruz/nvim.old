@@ -115,7 +115,15 @@ return {
   "rafamadriz/friendly-snippets",
 
   -- LSP
-  "neovim/nvim-lspconfig",
+  { "neovim/nvim-lspconfig",
+    event = "BufReadPre",
+    dependencies = {
+      { "j-hui/fidget.nvim", config = true },
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
+    }
+  },
   -- "williamboman/nvim-lsp-installer",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
