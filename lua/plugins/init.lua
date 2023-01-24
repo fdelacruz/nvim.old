@@ -142,7 +142,7 @@ return {
   "j-hui/fidget.nvim",
   "lvimuser/lsp-inlayhints.nvim",
   -- "simrat39/inlay-hints.nvim",
-  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", branch = "main" },
 
   -- Rust
   -- "simrat39/rust-tools.nvim",
