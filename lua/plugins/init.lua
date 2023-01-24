@@ -64,7 +64,9 @@ return {
   "christianchiarulli/lir.nvim",
   "goolord/alpha-nvim",
   { "folke/which-key.nvim", event = "VeryLazy" },
-  "folke/zen-mode.nvim",
+  { "folke/zen-mode.nvim",
+    keys = {{  "<C-z>", "<cmd>ZenMode<CR>", desc = "Zen Mode" }},
+  },
   {
     "folke/twilight.nvim",
     config = function()
