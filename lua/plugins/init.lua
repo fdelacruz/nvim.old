@@ -49,7 +49,10 @@ return {
   "rmagatti/session-lens",
 
   --UI
-  { "stevearc/dressing.nvim", event = "VeryLazy"},
+  { "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    config = true,
+  },
   "ghillb/cybu.nvim",
   -- "SmiteshP/nvim-gps",
   {
@@ -57,7 +60,10 @@ return {
     dependencies = "neovim/nvim-lspconfig",
   },
   "tversteeg/registers.nvim",
-  "rcarriga/nvim-notify",
+  { "rcarriga/nvim-notify", event = "VeryLazy",
+    enabled = true,
+    config = true,
+  },
   "kyazdani42/nvim-web-devicons",
   "kyazdani42/nvim-tree.lua",
   --"tamago324/lir.nvim",
