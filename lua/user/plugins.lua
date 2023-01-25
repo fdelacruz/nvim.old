@@ -12,9 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-
   defaults = { lazy = true, version = "" },
-
+  install = { missing = true, colorscheme = { "kanagawa" } },
   ui = {
     border = "rounded",
   },
