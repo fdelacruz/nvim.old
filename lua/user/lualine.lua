@@ -90,7 +90,7 @@ local language_server = {
     local buf_ft = vim.bo.filetype
     local ui_filetypes = {
       "help",
-      "packer",
+      "lazy",
       "neogitstatus",
       "NvimTree",
       "Trouble",
@@ -209,7 +209,7 @@ local filetype = {
   fmt = function(str)
     local ui_filetypes = {
       "help",
-      "packer",
+      "lazy",
       "neogitstatus",
       "NvimTree",
       "Trouble",

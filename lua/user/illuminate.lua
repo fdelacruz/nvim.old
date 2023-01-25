@@ -14,7 +14,7 @@ require("illuminate").configure {
     "fugitive",
     "alpha",
     "NvimTree",
-    "packer",
+    "lazy",
     "neogitstatus",
     "Trouble",
     "lir",
