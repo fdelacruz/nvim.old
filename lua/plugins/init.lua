@@ -149,7 +149,10 @@ return {
   -- Rust
   -- "simrat39/rust-tools.nvim",
   "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite",
-  "Saecki/crates.nvim",
+  { "Saecki/crates.nvim",
+    ft = "rust",
+    config = true
+  },
 
   -- Lua
   "christianchiarulli/lua-dev.nvim",
