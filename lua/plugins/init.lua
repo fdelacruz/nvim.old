@@ -83,7 +83,7 @@ return {
     keys = { { "<C-u>" }, { "<C-d>" }, { "<C-b>" }, { "<C-f>" }, { "<C-y>" }, { "<C-e>" }, { "zt" }, { "zz" },{  "zb" } },
     config = true
   },
-  "folke/todo-comments.nvim",
+  { "folke/todo-comments.nvim", event = "VeryLazy" },
   "andymass/vim-matchup",
   "is0n/jaq-nvim",
   "junegunn/vim-slash",
