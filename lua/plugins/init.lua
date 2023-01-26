@@ -50,7 +50,6 @@ return {
   --UI
   { "stevearc/dressing.nvim",
     event = "VeryLazy",
-    config = true,
   },
   "ghillb/cybu.nvim",
   -- "SmiteshP/nvim-gps",
