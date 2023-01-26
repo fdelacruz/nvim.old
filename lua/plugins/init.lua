@@ -28,8 +28,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         "hrsh7th/nvim-cmp",
       },
-      config = true,
-    },
+    }
   },
   "nacro90/numb.nvim",
   -- use "norcalli/nvim-colorizer.lua"
