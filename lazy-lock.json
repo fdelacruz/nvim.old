@@ -1,7 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "d9cfae1059b62f7eacc09dba181efe4894e3b086" },
   "JABS.nvim": { "branch": "main", "commit": "6c020211aaa63c0b398a8d3cc6fa86679cf31490" },
-  "LuaSnip": { "branch": "master", "commit": "563827f00bb4fe43269e3be653deabc0005f1302" },
+  "LuaSnip": { "branch": "master", "commit": "60bb423229c5a3df6e3c1acda9c7b4e70d589d78" },
   "NeoZoom.lua": { "branch": "neo-zoom-original", "commit": "e1b004b7fc375505a4d081695d3b714b1894c9c1" },
   "SchemaStore.nvim": { "branch": "main", "commit": "82b039aa402c9d138c3c4c16b1465c8a3be66117" },
   "alpha-nvim": { "branch": "main", "commit": "21a0f2520ad3a7c32c0822f943368dc063a569fb" },
@@ -22,7 +22,7 @@
   "cybu.nvim": { "branch": "main", "commit": "1d3f30617df38ffeec24c172066849c42ed4c45f" },
   "dressing.nvim": { "branch": "master", "commit": "4436d6f41e2f6b8ada57588acd1a9f8b3d21453c" },
   "fidget.nvim": { "branch": "main", "commit": "44585a0c0085765195e6961c15529ba6c5a2a13b" },
-  "friendly-snippets": { "branch": "main", "commit": "046e4d3491baf664e0eef5231d28beb49333578b" },
+  "friendly-snippets": { "branch": "main", "commit": "a6f7a1609addb4e57daa6bedc300f77f8d225ab7" },
   "gitlinker.nvim": { "branch": "master", "commit": "c68d4873a14d2ae614875685ccca2e49472989e8" },
   "gitsigns.nvim": { "branch": "main", "commit": "bb808fc7376ed7bac0fbe8f47b83d4bf01738167" },
   "harpoon": { "branch": "master", "commit": "a2487c29dba9c3befbb57ccd8773b7f617fc593a" },

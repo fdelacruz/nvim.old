@@ -36,7 +36,7 @@ return {
   "windwp/nvim-spectre",
   "kevinhwang91/nvim-bqf",
   -- use "ThePrimeagen/harpoon",
-  "christianchiarulli/harpoon",
+  { "christianchiarulli/harpoon", event = "VeryLazy" },
   "MattesGroeger/vim-bookmarks",
   "kylechui/nvim-surround",
   "tpope/vim-repeat",
