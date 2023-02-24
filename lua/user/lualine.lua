@@ -58,7 +58,7 @@ local virtual_env = {
     end
     return ""
   end,
-  color = { fg = "green", bg = "#282c34" },
+  color = { fg = "#abb2bf", bg = "#282c34" },
   cond = hide_in_width,
 }
 
