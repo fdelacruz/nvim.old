@@ -62,17 +62,17 @@ for _, server in pairs(servers) do
   server = vim.split(server, "@")[1]
 
   if server == "lua_ls" then
-    local l_status_ok, lua_dev = pcall(require, "lua-dev")
+    local l_status_ok, neo_dev = pcall(require, "neodev")
     if not l_status_ok then
       return
     end
-    local luadev = lua_dev.setup {
+    local neodev = neo_dev.setup {
       lspconfig = {
         on_attach = opts.on_attach,
         capabilities = opts.capabilities,
       },
     }
-    lspconfig.sumneko_lua.setup(luadev)
+    lspconfig.sumneko_lua.setup(neodev)
     goto continue
   end
 

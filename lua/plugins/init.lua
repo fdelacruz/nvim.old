@@ -158,7 +158,7 @@ return {
   },
 
   -- Lua
-  "christianchiarulli/lua-dev.nvim",
+  "folke/neodev.nvim",
 
   -- Telescope
   "nvim-telescope/telescope.nvim",
