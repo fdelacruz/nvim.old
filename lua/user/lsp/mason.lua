@@ -14,7 +14,7 @@ local servers = {
   "emmet_ls",
   "html",
   "jsonls",
-  "sumneko_lua",
+  "lua_ls",
   "tsserver",
   "pyright",
   "yamlls",
@@ -61,21 +61,15 @@ for _, server in pairs(servers) do
 
   server = vim.split(server, "@")[1]
 
-  if server == "sumneko_lua" then
+  if server == "lua_ls" then
     local l_status_ok, lua_dev = pcall(require, "lua-dev")
     if not l_status_ok then
       return
     end
-    -- local sumneko_opts = require "user.lsp.settings.sumneko_lua"
-    -- opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-    -- opts = vim.tbl_deep_extend("force", require("lua-dev").setup(), opts)
     local luadev = lua_dev.setup {
-      --   -- add any options here, or leave empty to use the default settings
-      -- lspconfig = opts,
       lspconfig = {
         on_attach = opts.on_attach,
         capabilities = opts.capabilities,
-        --   -- settings = opts.settings,
       },
     }
     lspconfig.sumneko_lua.setup(luadev)
