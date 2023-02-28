@@ -158,7 +158,10 @@ return {
   },
 
   -- Lua
-  "folke/neodev.nvim",
+  {
+    "folke/neodev.nvim",
+    lazy = true,
+  },
 
   -- Telescope
   "nvim-telescope/telescope.nvim",
