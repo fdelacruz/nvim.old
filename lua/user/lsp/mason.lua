@@ -62,17 +62,10 @@ for _, server in pairs(servers) do
   server = vim.split(server, "@")[1]
 
   if server == "lua_ls" then
-    local l_status_ok, neo_dev = pcall(require, "neodev")
-    if not l_status_ok then
-      return
-    end
-    local neodev = neo_dev.setup {
-      lspconfig = {
-        on_attach = opts.on_attach,
-        capabilities = opts.capabilities,
-      },
-    }
-    lspconfig.sumneko_lua.setup(neodev)
+    lspconfig.sumneko_lua.setup({
+      on_attach = require("user.lsp.handlers").on_attach,
+      capabilities = require("user.lsp.handlers").capabilities,
+    })
     goto continue
   end
 

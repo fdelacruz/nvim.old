@@ -157,12 +157,6 @@ return {
     config = true
   },
 
-  -- Lua
-  {
-    "folke/neodev.nvim",
-    lazy = true,
-  },
-
   -- Telescope
   "nvim-telescope/telescope.nvim",
   "tom-anders/telescope-vim-bookmarks.nvim",
