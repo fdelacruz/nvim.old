@@ -63,6 +63,14 @@ for _, server in pairs(servers) do
 
   if server == "lua_ls" then
     lspconfig.sumneko_lua.setup({
+    settings = {
+      Lua = {
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = {'vim'},
+        },
+      }
+      },
       on_attach = require("user.lsp.handlers").on_attach,
       capabilities = require("user.lsp.handlers").capabilities,
     })
