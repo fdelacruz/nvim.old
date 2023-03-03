@@ -317,6 +317,23 @@ local mode = {
   end,
 }
 
+local lazy_status = {
+  function()
+    return require("lazy.status").updates()
+  end,
+  cond = require("lazy.status").has_updates,
+  color = { bg = "#282c34", fg = "#ff9e64" },
+}
+
+local lazy_stats = {
+  function()
+    local stats = require("lazy").stats()
+    local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+    return "" .. ms .. "ms"
+  end,
+  color = { fg = "#f6c177" },
+}
+
 lualine.setup {
   options = {
     globalstatus = true,
@@ -333,21 +350,8 @@ lualine.setup {
     lualine_c = {},
     -- lualine_c = { current_signature },
     lualine_x = {
-      {
-        function()
-          return require("lazy.status").updates()
-        end,
-        cond = require("lazy.status").has_updates,
-        color = { bg = "#282c34", fg = "#ff9e64" },
-      },
-      {
-        function()
-          local stats = require("lazy").stats()
-          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-          return "" .. ms .. "ms"
-        end,
-        color = { fg = "#f6c177" },
-      },
+      lazy_status,
+      lazy_stats,
       language_server,
       spaces,
       "encoding",
