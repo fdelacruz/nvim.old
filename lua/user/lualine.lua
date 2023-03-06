@@ -37,7 +37,7 @@ end
 
 local icons = require "user.icons"
 
-local virtual_env = {
+local python_env = {
   function()
     local function env_cleanup(venv)
       if string.find(venv, "/") then
@@ -196,14 +196,6 @@ local mode_map = {
   ["t"] = "TERMINAL",
 }
 
--- local mode = {
---   "mode",
---   fmt = function(str)
---     return "" .. str .. ""
---   end,
---   padding = 1,
--- }
-
 local filetype = {
   "filetype",
   fmt = function(str)
@@ -273,29 +265,29 @@ local progress = {
 --   return "%#SLProgress#" .. chars[index] .. "%*"
 -- end
 
-local current_signature = {
-  function()
-    local buf_ft = vim.bo.filetype
-
-    if buf_ft == "toggleterm" or buf_ft == "TelescopePrompt" then
-      return ""
-    end
-    if not pcall(require, "lsp_signature") then
-      return ""
-    end
-    local sig = require("lsp_signature").status_line(30)
-    local hint = sig.hint
-
-    if not require("user.functions").isempty(hint) then
-      -- return "%#SLSeparator#│ " .. hint .. "%*"
-      return "%#SLSeparator# " .. hint .. "%*"
-    end
-
-    return ""
-  end,
-  cond = hide_in_width_100,
-  padding = 0,
-}
+-- local current_signature = {
+--   function()
+--     local buf_ft = vim.bo.filetype
+--
+--     if buf_ft == "toggleterm" or buf_ft == "TelescopePrompt" then
+--       return ""
+--     end
+--     if not pcall(require, "lsp_signature") then
+--       return ""
+--     end
+--     local sig = require("lsp_signature").status_line(30)
+--     local hint = sig.hint
+--
+--     if not require("user.functions").isempty(hint) then
+--       -- return "%#SLSeparator#│ " .. hint .. "%*"
+--       return "%#SLSeparator# " .. hint .. "%*"
+--     end
+--
+--     return ""
+--   end,
+--   cond = hide_in_width_100,
+--   padding = 0,
+-- }
 
 local spaces = {
   function()
@@ -346,18 +338,17 @@ lualine.setup {
   },
   sections = {
     lualine_a = { mode },
-    lualine_b = { branch, virtual_env, diagnostics, diff },
-    lualine_c = {},
-    -- lualine_c = { current_signature },
+    lualine_b = { branch },
+    lualine_c = { diff, python_env },
     lualine_x = {
       lazy_status,
       lazy_stats,
+      diagnostics,
       language_server,
       spaces,
       "encoding",
       filetype,
     },
-    -- lualine_x = { diff, spaces, filetype },
     lualine_y = { progress },
     lualine_z = { location },
   },
