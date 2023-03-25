@@ -341,8 +341,6 @@ lualine.setup {
     lualine_b = { branch },
     lualine_c = { diff, python_env },
     lualine_x = {
-      lazy_status,
-      lazy_stats,
       diagnostics,
       language_server,
       spaces,
