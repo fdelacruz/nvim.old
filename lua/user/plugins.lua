@@ -17,10 +17,10 @@ require("lazy").setup("plugins", {
   ui = {
     border = "rounded",
   },
-	checker = {
-		enabled = true,
-    concurrency = 1,
-	},
+	-- checker = {
+	-- 	enabled = true,
+ --    concurrency = 1,
+	-- },
   performance = {
     cache = {
       enabled = true,
